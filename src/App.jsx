@@ -1,10 +1,24 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+import Faq from "./components/FAQ";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="flex items-center justify-center font-semibold text-xs sm:text-3xl md:text-3xl lg:text-5xl ">
-      Let's get some Shadcn Magic in here !!
-      <button className=""> Click Me! </button>
+    <div className="">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Faq />
+      <Contact />
+      <Footer />
     </div>
   );
 }
