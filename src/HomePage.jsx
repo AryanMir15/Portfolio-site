@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "./Sections/Navbar";
-import Hero from "./Sections/Hero";
-import About from "./Sections/About";
-import Skills from "./Sections/Skills";
-import Projects from "./Sections/Projects";
-import Footer from "./Sections/Footer";
-import Faq from "./Sections/FAQ";
-import Contact from "./Sections/Contact";
+import Navbar from "./pages/HomePage/Sections/Navbar";
+import Hero from "./pages/HomePage/Sections/Hero";
+import About from "./pages/HomePage/Sections/About";
+import Skills from "./pages/HomePage/Sections/Skills";
+import Projects from "./pages/HomePage/Sections/Projects";
+import Footer from "./pages/HomePage/Sections/Footer";
+import Faq from "./pages/HomePage/Sections/FAQ";
+import Contact from "./pages/HomePage/Sections/Contact";
 
 function HomePage() {
   return (

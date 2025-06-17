@@ -3,28 +3,69 @@ const singleProjectData = [
     id: 11,
     title: "Amazon Clone (FakeCommerce™)",
     description:
-      "A full-blown fake e-commerce site built purely for practice, not profit. It's got multiple pages — products, cart (split into item summary & payment summary), and a track-orders page that’s actually fun. After placing an order, you get redirected to a timeline-style progress tracker that uses day.js and some spicy math to animate a fake delivery progress bar over time. Yeah, it's dumb, but it *works*. All built solo, from scratch, post-course grind. No fancy libraries, just good old Tailwind and raw React sauce.",
-    stack: ["React", "Tailwind", "Day.js", "LocalStorage"],
+      "A complete front-end e-commerce clone built with HTML, CSS, and JavaScript. Includes product browsing, cart functionality, and an order tracking system.",
+    stack: ["HTML", "CSS", "JavaScript"],
     liveLink: "", // fill this later
     githubLink: "", // fill this later
+    details: `
+This project replicates the core functionality of an e-commerce platform using only HTML, CSS, and JavaScript.
+
+### Pages and Features:
+- **Products Page**: Displays a list of sample products in a responsive grid layout.
+- **Search Functionality**: Users can filter products by name using a client-side search bar.
+- **Cart Page**: Divided into two sections — Order Summary and Payment Summary. Items can be added or removed dynamically, and total prices update accordingly.
+- **Track Orders Page**: Shows a list of placed orders. Each order includes a button to view its delivery progress.
+- **Progress Tracker**: Simulates order delivery using animated progress bars and estimated times.
+
+All data is managed with localStorage for persistence, and the site is fully responsive across screen sizes.
+    `,
+    image: "/projects/amazon.png",
   },
+
   {
     id: 12,
-    title: "Jobs API Backend (The Painful One)",
+    title: "Jobs API Backend",
     description:
-      "This is the backend project that made me question life. Built a RESTful Jobs API from scratch using Express and MongoDB. It handles user auth (JWT + bcrypt), has full-blown CRUD ops for job listings, protected routes, and a clean middleware setup. No UI, just pure API carnage tested via Postman. Honestly, my proudest project — mostly because login/register + auth logic made me cry multiple times. Deployed on Replit like a true bootstrapped warrior.",
+      "A RESTful API built with Node.js, Express, and MongoDB. Includes authentication, job CRUD operations, and secure route protection.",
     stack: ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Postman"],
-    liveLink: "", // fill this later (Replit run link maybe?)
+    liveLink: "", // fill this later
     githubLink: "", // fill this later
+    details: `
+A full-featured backend API designed for job listings and user account management.
+
+### Core Features:
+- **User Authentication**: Secure login and registration using JWT and bcrypt for password encryption.
+- **CRUD Operations**: Users can create, read, update, and delete their job entries.
+- **Protected Routes**: Authenticated users can only access their own data.
+- **Middleware**: Includes centralized error handling and input validation.
+- **Testing**: All endpoints tested using Postman.
+
+This project emphasizes clean structure, modular code, and best practices in RESTful API development.
+    `,
+    image: "/projects/API.png",
   },
+
   {
-    id: 12,
+    id: 13,
     title: "Cocktail Explorer",
     description:
-      "A React-based multi-page cocktail explorer app using React Router and external cocktail APIs. Home page lists all drinks, there's a single cocktail view for zooming into a drink’s details, and a search feature that filters drinks live based on queries. Also includes an 'About' page just to flex that I know how routes work. It’s clean, simple, and has that sweet 'fake app you'd find in a tutorial' energy. But hey, it works, and I built it solo.",
+      "A multi-page React application that allows users to browse, search, and view details of cocktails using the CocktailDB API.",
     stack: ["React", "React Router", "CocktailDB API", "Tailwind"],
     liveLink: "", // fill this later
     githubLink: "", // fill this later
+    details: `
+A responsive front-end application built in React that interacts with the CocktailDB API.
+
+### Main Features:
+- **Home Page**: Displays a list of all cocktails retrieved from the API.
+- **Search Functionality**: Users can filter the list of drinks by entering keywords in real time.
+- **Single Cocktail View**: Clicking a drink navigates to a details page showing its ingredients, instructions, and category.
+- **Routing**: Implemented using React Router, with clean URL handling and fallback routes.
+- **Styling**: Built with Tailwind CSS for consistent and responsive design.
+
+This project demonstrates strong understanding of API integration, component-based architecture, and modern React practices.
+    `,
+    image: "/projects/cocktails.png",
   },
 ];
 

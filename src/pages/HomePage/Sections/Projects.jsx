@@ -36,10 +36,16 @@ function Projects() {
                       {tech.map((logo, index) => {
                         const { icon, color } = logo;
                         return (
-                          <i
+                          <span
                             key={index}
-                            className={`si ${icon} ${color} inline-block`}
-                          ></i>
+                            className={`text-xl ${color} flex items-center justify-center`}
+                          >
+                            {typeof icon === "string" ? (
+                              <i className={`si ${icon}`}></i>
+                            ) : (
+                              React.createElement(icon, { size: "1.2em" })
+                            )}
+                          </span>
                         );
                       })}
                     </div>
