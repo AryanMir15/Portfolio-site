@@ -7,16 +7,20 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Faq from "./components/FAQ";
 import Contact from "./components/Contact";
-import HomePage from "./HomePage";
-import { Routes, Route } from "react-router-dom";
 
-function App() {
+function HomePage() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projects/:id" element={<HomePage />} />
-    </Routes>
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Faq />
+      <Contact />
+      <Footer />
+    </>
   );
 }
 
-export default App;
+export default HomePage;

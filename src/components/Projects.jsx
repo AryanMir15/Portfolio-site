@@ -1,6 +1,6 @@
 import React from "react";
 import projectData from "@/data/projects";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Projects() {
   return (

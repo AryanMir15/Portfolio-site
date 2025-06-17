@@ -96,7 +96,7 @@ function Hero() {
               />
             </a>
           </div>
-          <div className="flex justify-start pl-5">
+          <div className="flex justify-center md:justify-start gap-6 mt-2 items-center text-lg">
             <a
               href="mailto:tanzeelmir112@gmail.com"
               className="mt-5 text-sm text-gray-400 hover:text-white transition"
