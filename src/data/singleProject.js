@@ -65,7 +65,7 @@ A responsive front-end application built in React that interacts with the Cockta
 
 This project demonstrates strong understanding of API integration, component-based architecture, and modern React practices.
     `,
-    image: "/projects/cocktails.png",
+    image: "/projects/cocktail.png",
   },
 ];
 

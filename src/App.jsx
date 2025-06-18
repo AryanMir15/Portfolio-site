@@ -9,12 +9,13 @@ import Faq from "./pages/HomePage/Sections/FAQ";
 import Contact from "./pages/HomePage/Sections/Contact";
 import HomePage from "./HomePage";
 import { Routes, Route } from "react-router-dom";
+import SingleProject from "./pages/SingleProject/SingleProject";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/projects/:id" element={<HomePage />} />
+      <Route path="/projects/:id" element={<SingleProject />} />
     </Routes>
   );
 }
