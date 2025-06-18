@@ -153,6 +153,12 @@ function AmazonClone() {
             That mindset shift hit hard, and now I build everything with that
             lens.
           </p>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 px-4 py-2 text-white border border-gray-600 rounded hover:bg-gray-800 transition hover:shadow-[0_5px_25px_rgba(0,0,0,0.4)]"
+          >
+            <ArrowLeft size={18} /> Back Home
+          </Link>
         </div>
       </section>
 

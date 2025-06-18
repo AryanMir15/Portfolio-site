@@ -5,19 +5,18 @@ const apiData = {
     "A RESTful API built with Node.js, Express, and MongoDB. Includes authentication, job CRUD operations, and secure route protection.",
   stack: ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Postman"],
   liveLink: "", // fill this later
-  githubLink: "", // fill this later
+  githubLink: "https://github.com/AryanMir15/Jobs-Api", // fill this later
   details: `
-A full-featured backend API designed for job listings and user account management.
+This project serves as the backend of a job tracking platform built entirely with Node.js and Express.js. MongoDB is used as the database, and authentication is managed using JWT.
 
 ### Core Features:
-- **User Authentication**: Secure login and registration using JWT and bcrypt for password encryption.
-- **CRUD Operations**: Users can create, read, update, and delete their job entries.
-- **Protected Routes**: Authenticated users can only access their own data.
-- **Middleware**: Includes centralized error handling and input validation.
-- **Testing**: All endpoints tested using Postman.
+- **Authentication**: Register/Login with hashed passwords using bcrypt and secure token handling via JWT.
+- **Jobs CRUD**: Authenticated users can create, retrieve, update, and delete job entries.
+- **Protected Routes**: Only authorized users can access their job data.
+- **Middlewares**: Centralized error handling, request validation, and auth middleware included.
+- **Testing**: Fully tested via Postman for every route and scenario.
 
-This project emphasizes clean structure, modular code, and best practices in RESTful API development.
-    `,
+The project emphasizes modular architecture and code readability.`,
   image: "/projects/API.png",
 };
 
