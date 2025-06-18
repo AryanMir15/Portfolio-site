@@ -108,7 +108,7 @@ function Hero() {
 
         <div className="hidden md:block md:max-w-fit justify-end ">
           <img
-            src="/public/Profile.png"
+            src="/Profile.png"
             alt="Profile"
             className="w-1.5 h-1.5 md:w-80 md:h-80 rounded-full object-cover object-top border-4 border-indigo-600"
             style={{
