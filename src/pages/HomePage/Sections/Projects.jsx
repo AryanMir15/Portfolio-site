@@ -13,17 +13,13 @@ function Projects() {
           Projects I've Built
         </h2>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
-          {/* Amazon Clone */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projectData.map((project) => {
-            const { title, description, image, tech, id } = project;
+            const { title, description, image, tech, id, to } = project;
 
             return (
-              <Link to={`/projects/${id}`}>
-                <div
-                  id={id}
-                  className="bg-gray-900 rounded-2xl overflow-hidden shadow hover:shadow-xl transition cursor-pointer"
-                >
+              <Link to={`/projects/${to}`} key={id}>
+                <div className="rounded-2xl overflow-hidden bg-gray-900 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] cursor-pointer">
                   <img
                     src={image}
                     alt={title}
@@ -41,7 +37,7 @@ function Projects() {
                             className={`text-xl ${color} flex items-center justify-center`}
                           >
                             {typeof icon === "string" ? (
-                              <i className={`si ${icon}`}></i>
+                              <i className={icon}></i>
                             ) : (
                               React.createElement(icon, { size: "1.2em" })
                             )}

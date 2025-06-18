@@ -1,13 +1,19 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const buildHref = (hash) => (isHome ? hash : `/#${hash.replace("#", "")}`);
+
   return (
     <div className="bg-gray-900 absolute left-0 right-0 top-0 h-12 flex items-center justify-center shadow-md z-50">
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-sm text-gray-200">
           <li>
             <a
-              href="#"
+              href="/"
               className="p-1 hover:text-white focus:outline-none"
               aria-label="Home"
             >
@@ -32,7 +38,7 @@ function Navbar() {
 
           <li>
             <a
-              href="#projects"
+              href={buildHref("#projects")}
               className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
             >
               Projects
@@ -43,7 +49,7 @@ function Navbar() {
 
           <li>
             <a
-              href="#contact"
+              href={buildHref("#contact")}
               className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
             >
               Contact
@@ -54,7 +60,7 @@ function Navbar() {
 
           <li>
             <a
-              href="#skills"
+              href={buildHref("#skills")}
               className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
             >
               Skills

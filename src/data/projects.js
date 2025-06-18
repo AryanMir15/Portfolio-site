@@ -12,6 +12,7 @@ const projectData = [
       { icon: "si si-css3", color: "text-blue-400" },
       { icon: "si si-javascript", color: "text-yellow-300" },
     ],
+    to: "amazon-clone",
   },
   {
     id: 12,
@@ -24,6 +25,8 @@ const projectData = [
       { icon: "si si-express", color: "text-gray-300" },
       { icon: "si si-mongodb", color: "text-green-400" },
     ],
+
+    to: "jobs-API-Backend",
   },
   {
     id: 13,
@@ -36,6 +39,8 @@ const projectData = [
       { icon: "si si-javascript", color: "text-yellow-300" },
       { icon: "si si-api", color: "text-white" },
     ],
+
+    to: "cocktail-explorer",
   },
 ];
 

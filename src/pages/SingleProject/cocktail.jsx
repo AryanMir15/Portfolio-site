@@ -1,19 +1,13 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import singleProjectData from "../../data/singleProject";
+import { Link } from "react-router-dom";
 import Navbar from "../HomePage/Sections/Navbar";
 import Footer from "../HomePage/Sections/Footer";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import cocktailData from "@/data/Single Projects/cocktail";
 
-function SingleProject() {
-  const { id } = useParams();
-  const project = singleProjectData.find((p) => String(p.id) === id);
-
-  if (!project)
-    return <p className="text-white text-center mt-20">Project not found 😵</p>;
-
-  const { title, description, stack, image, details, githubLink, liveLink } =
-    project;
+function CocktailProject() {
+  const { title, description, stack, image, githubLink, liveLink } =
+    cocktailData;
 
   return (
     <>
@@ -90,21 +84,8 @@ function SingleProject() {
           </ul>
         </div>
       </section>
-
-      {/* DETAILS SECTION */}
-      <section className="bg-gray-950 text-white px-4 py-10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">Project Details</h2>
-          <div
-            className="prose prose-invert max-w-none text-gray-300"
-            dangerouslySetInnerHTML={{ __html: details }}
-          />
-        </div>
-      </section>
-
-      <Footer />
     </>
   );
 }
 
-export default SingleProject;
+export default CocktailProject;
