@@ -34,38 +34,43 @@ function Navbar() {
             </a>
           </li>
 
-          <li className="text-gray-400">/</li>
+          {/* Only show full nav if on home page */}
+          {isHome && (
+            <>
+              <li className="text-gray-400">/</li>
 
-          <li>
-            <a
-              href={buildHref("#projects")}
-              className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-            >
-              Projects
-            </a>
-          </li>
+              <li>
+                <a
+                  href={buildHref("#projects")}
+                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
+                >
+                  Projects
+                </a>
+              </li>
 
-          <li className="text-gray-400">/</li>
+              <li className="text-gray-400">/</li>
 
-          <li>
-            <a
-              href={buildHref("#contact")}
-              className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-            >
-              Contact
-            </a>
-          </li>
+              <li>
+                <a
+                  href={buildHref("#contact")}
+                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
+                >
+                  Contact
+                </a>
+              </li>
 
-          <li className="text-gray-400">/</li>
+              <li className="text-gray-400">/</li>
 
-          <li>
-            <a
-              href={buildHref("#skills")}
-              className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-            >
-              Skills
-            </a>
-          </li>
+              <li>
+                <a
+                  href={buildHref("#skills")}
+                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
+                >
+                  Skills
+                </a>
+              </li>
+            </>
+          )}
         </ol>
       </nav>
     </div>
