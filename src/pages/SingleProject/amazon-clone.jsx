@@ -89,7 +89,7 @@ function AmazonClone() {
       </section>
 
       {/* DETAILED DESCRIPTION SECTION */}
-      <section className="bg-slate-950 text-white px-16 py-14">
+      <section className="bg-slate-950 text-white px-6 md:px-16 py-14">
         <div className="max-w-4xl mx-auto space-y-10">
           <h2 className="text-2xl font-semibold border-b border-gray-700 pb-3">
             📋 Detailed Overview
