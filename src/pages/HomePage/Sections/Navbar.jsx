@@ -1,80 +1,64 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 
-function Navbar() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+const navItems = [
+  { name: "Home", hash: "#home" },
+  { name: "Projects", hash: "#projects" },
+  { name: "Skills", hash: "#skills" },
+];
 
-  const buildHref = (hash) => (isHome ? hash : `/#${hash.replace("#", "")}`);
+export default function FancyNavbar() {
+  const [activeHash, setActiveHash] = useState("#home");
+
+  const handleClick = (e, hash) => {
+    e.preventDefault(); // stop default jump
+    setActiveHash(hash);
+
+    const section = document.querySelector(hash);
+    if (section) {
+      section.scrollIntoView({ behavior: "auto" }); // no smooth
+    }
+
+    // OR if you still want instant jump:
+    // window.location.hash = hash;
+  };
 
   return (
-    <div className="bg-gray-900 absolute left-0 right-0 top-0 h-12 flex items-center justify-center shadow-md z-50">
-      <nav aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-gray-200">
-          <li>
-            <a
-              href="/"
-              className="p-1 hover:text-white focus:outline-none"
-              aria-label="Home"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <header className="fixed top-6 left-6 right-6 z-50 flex justify-center items-center">
+      <div className="flex items-center justify-between w-full max-w-6xl h-[70px] bg-black rounded-full px-6 border border-black shadow-[0_8px_30px_rgba(0,0,0,0.9)]">
+        {/* Left - Name */}
+        <div className="text-white text-[1.1rem] font-semibold tracking-normal">
+          TanzeelMir
+        </div>
+
+        {/* Center - Nav links */}
+        <div className="flex items-center gap-2">
+          {navItems.map((item) => {
+            const isActive = activeHash === item.hash;
+            return (
+              <a
+                key={item.name}
+                href={item.hash}
+                onClick={(e) => handleClick(e, item.hash)}
+                className={`text-xs px-4 py-1 rounded-full transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-white text-black border border-white"
+                    : "text-white hover:bg-gray-200 hover:text-black"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </a>
-          </li>
+                {item.name}
+              </a>
+            );
+          })}
+        </div>
 
-          {/* Only show full nav if on home page */}
-          {isHome && (
-            <>
-              <li className="text-gray-400">/</li>
-
-              <li>
-                <a
-                  href={buildHref("#projects")}
-                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-                >
-                  Projects
-                </a>
-              </li>
-
-              <li className="text-gray-400">/</li>
-
-              <li>
-                <a
-                  href={buildHref("#contact")}
-                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-                >
-                  Contact
-                </a>
-              </li>
-
-              <li className="text-gray-400">/</li>
-
-              <li>
-                <a
-                  href={buildHref("#skills")}
-                  className="inline-block px-3 py-1 rounded-md transition-colors hover:bg-gray-700 hover:text-white focus:outline-none"
-                >
-                  Skills
-                </a>
-              </li>
-            </>
-          )}
-        </ol>
-      </nav>
-    </div>
+        {/* Right - Contact Me button */}
+        <a
+          href="#contact"
+          className="text-xs px-4 py-3 rounded-full text-black bg-white hover:bg-gray-200 border-white cursor-pointer transition-all"
+        >
+          Contact Me
+        </a>
+      </div>
+    </header>
   );
 }
-
-export default Navbar;
