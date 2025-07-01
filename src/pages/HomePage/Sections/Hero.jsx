@@ -17,7 +17,7 @@ const Hero = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative isolate min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-violet-400 text-gray-900 px-6 sm:px-10 lg:px-28 py-24 overflow-hidden"
+      className="relative isolate min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 px-6 sm:px-10 lg:px-28 py-24 overflow-hidden"
     >
       {/* Floating Orb */}
       <motion.img

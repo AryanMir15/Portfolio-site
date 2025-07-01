@@ -7,6 +7,7 @@ import Projects from "./pages/HomePage/Sections/Projects";
 import Footer from "./pages/HomePage/Sections/Footer";
 import Faq from "./pages/HomePage/Sections/FAQ";
 import Contact from "./pages/HomePage/Sections/Contact";
+import Categories from "./Boiler Components/Categories";
 
 function HomePage() {
   return (
