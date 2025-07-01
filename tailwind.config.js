@@ -79,6 +79,11 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         glow: "glowMove 6s ease-in-out infinite",
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
+        dancing: ['"Dancing Script"', "cursive"],
+      },
     },
   },
   plugins: [animatePlugin],

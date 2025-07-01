@@ -1,57 +1,129 @@
-import React from "react";
-import { ArrowDown } from "lucide-react";
+import React, { useRef } from "react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Floating image Y offsets based on scroll
+  const orbY = useTransform(scrollYProgress, [0, 1], [0, 150]); // Black orb goes down
+  const objY = useTransform(scrollYProgress, [0, 1], [0, -150]); // Other object goes up
+
   return (
     <section
-      className="relative isolate min-h-screen flex items-center justify-center bg-white text-gray-900 px-4 sm:px-6 lg:px-8"
+      ref={heroRef}
       id="home"
+      className="relative isolate min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-violet-400 text-gray-900 px-6 sm:px-10 lg:px-28 py-24 overflow-hidden"
     >
-      {/* Background blobs */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
-        <div
-          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
-      </div>
+      {/* Floating Orb */}
+      <motion.img
+        src="/black-orb.png"
+        alt="Black Orb"
+        style={{ y: orbY }}
+        className="absolute top-16 left-10 w-28 md:w-36 opacity-80 drop-shadow-2xl pointer-events-none z-0"
+      />
 
-      {/* Hero content */}
-      <div className="text-center space-y-6">
-        <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-balance drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)]">
-          Building the Web
-        </h1>
-        <p className="text-xl sm:text-2xl font-semibold text-indigo-600">
-          I’m Tanzeel — Fullstack Dev
-        </p>
-        <div className="pt-2">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-5 py-2.5 text-sm sm:text-base font-medium text-white shadow-md hover:bg-indigo-500 transition"
+      {/* Floating Object */}
+      <motion.img
+        src="/floating-object.png"
+        alt="Floating Object"
+        style={{ y: objY }}
+        className="absolute bottom-10 right-8 w-32 md:w-40 opacity-80 drop-shadow-2xl pointer-events-none z-0"
+      />
+
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-16 z-10">
+        {/* LEFT */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="space-y-6 max-w-xl text-center md:text-left w-full"
+        >
+          <p className="text-sm sm:text-base text-violet-600 tracking-wider font-dancing">
+            Full-Stack Developer
+          </p>
+
+          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight">
+            Tanzeel
+          </h1>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-md mx-auto md:mx-0">
+            I build fast, modern, and fully responsive web apps with the MERN
+            stack.
+          </p>
+
+          {/* Tech Icons */}
+          <div className="max-w-6xl mx-auto text-center bg-transparent flex items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              <div className="bg-transparent rounded-2xl p-6 hover:shadow-[0_8px_30px_rgba(56,189,248,0.7)] transition duration-300">
+                <i className="si si-react text-sky-400 text-4xl mb-3"></i>
+              </div>
+              <div className="bg-transparent rounded-2xl p-6 hover:shadow-[0_8px_30px_rgba(103,232,249,0.7)] transition duration-300">
+                <i className="si si-tailwindcss text-cyan-400 text-4xl mb-3"></i>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center md:justify-start gap-4 pt-4">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-110 transition"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-110 transition"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center md:justify-start">
+            <a
+              href="#projects"
+              className="mt-6 w-full sm:w-auto text-center inline-flex items-center gap-2 rounded-md bg-black px-6 py-3 text-white text-sm sm:text-base font-medium shadow-[-4px_5px_10px_rgba(0,0,0,0.7)] hover:bg-gray-800 transition-all"
+            >
+              View Projects
+              <ArrowDown className="w-4 h-4 animate-pulse" />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* RIGHT */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="w-full max-w-sm md:max-w-md h-[360px] md:h-[440px]"
+        >
+          <motion.div
+            className="bg-black rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.7)] h-full relative flex items-center justify-center"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            View Projects
-            <ArrowDown className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-
-      {/* Bottom blob */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-      >
-        <div
-          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
+            <img
+              src="/about.jpg"
+              alt="Developer workspace"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+            />
+            <div className="relative z-10 text-center px-6">
+              <p className="text-white text-xl font-semibold leading-relaxed">
+                “Shipping clean code <br /> since 2024.”
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
