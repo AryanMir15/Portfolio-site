@@ -6,45 +6,49 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="bg-gray-950 text-white py-32 px-4 sm:px-6 lg:px-8"
+      className="relative bg-gradient-to-br from-white via-cyan-100 to-cyan-50 dark:from-[#0a0a0a] dark:via-[#0d0d0d] dark:to-black text-foreground py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-16">
-          Projects I've Built
+      {/* Optional subtle cyan flare on sides in dark mode */}
+      <div className="hidden dark:block absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-cyan-900 to-transparent opacity-20" />
+      <div className="hidden dark:block absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-cyan-900 to-transparent opacity-20" />
+
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-16 text-foreground">
+          Projects I’ve Built
         </h2>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projectData.map((project) => {
-            const { title, description, image, tech, id, to } = project;
+            const { title, description, image, id, to } = project;
 
             return (
               <Link to={`/projects/${to}`} key={id}>
-                <div className="rounded-2xl overflow-hidden bg-gray-900 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] cursor-pointer">
-                  <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                    <p className="text-gray-400 text-sm mb-4">{description}</p>
-                    <div className="flex gap-4 text-xl">
-                      {tech.map((logo, index) => {
-                        const { icon, color } = logo;
-                        return (
-                          <span
-                            key={index}
-                            className={`text-xl ${color} flex items-center justify-center`}
-                          >
-                            {typeof icon === "string" ? (
-                              <i className={icon}></i>
-                            ) : (
-                              React.createElement(icon, { size: "1.2em" })
-                            )}
-                          </span>
-                        );
-                      })}
+                <div className="group rounded-3xl border border-border bg-white dark:bg-card shadow-xl dark:shadow-[0_15px_25px_rgba(0,255,255,0.05)] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
+                  {/* Content Section including image */}
+                  <div className="p-6 text-left flex-grow flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                        {title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {description}
+                      </p>
                     </div>
+
+                    <div className="relative overflow-hidden rounded-xl max-h-40">
+                      <img
+                        src={image}
+                        alt={title}
+                        className="rounded-xl object-cover w-full h-full transition-transform duration-500 transform group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Live Preview Button */}
+                  <div className="px-6 pb-6">
+                    <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white dark:from-cyan-400 dark:to-cyan-300 dark:text-black py-2 rounded-lg font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300">
+                      Live Preview
+                    </button>
                   </div>
                 </div>
               </Link>
