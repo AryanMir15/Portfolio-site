@@ -2,7 +2,7 @@ import animatePlugin from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"], // allows switching via `class="dark"`
+  darkMode: ["class"], // Enables class-based theme switching
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -23,20 +23,20 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))", // CTA color
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "oklch(var(--primary))", // Dynamic via variable
+          foreground: "oklch(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))", // Accent
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "oklch(var(--secondary))",
+          foreground: "oklch(var(--secondary-foreground))",
+        },
+        accent: {
+          DEFAULT: "oklch(var(--accent))",
+          foreground: "oklch(var(--accent-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -68,15 +68,9 @@ export default {
           to: { height: "0" },
         },
         glowMove: {
-          "0%": {
-            transform: "translateX(-50%) translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(50%)",
-          },
-          "100%": {
-            transform: "translateX(-50%) translateY(-50%)",
-          },
+          "0%": { transform: "translateX(-50%) translateY(-50%)" },
+          "50%": { transform: "translateX(50%) translateY(50%)" },
+          "100%": { transform: "translateX(-50%) translateY(-50%)" },
         },
       },
       animation: {

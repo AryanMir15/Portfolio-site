@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./pages/HomePage/Sections/Navbar";
+import NavbarCom from "./pages/HomePage/Sections/Navbar";
 import Hero from "./pages/HomePage/Sections/Hero";
 import About from "./pages/HomePage/Sections/About";
 import Skills from "./pages/HomePage/Sections/Skills";
@@ -12,7 +12,7 @@ import Categories from "./Boiler Components/Categories";
 function HomePage() {
   return (
     <>
-      <Navbar />
+      <NavbarCom />
       <Hero />
       <About />
       <Skills />

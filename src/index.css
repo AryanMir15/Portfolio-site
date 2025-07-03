@@ -13,12 +13,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
 
-    /* CTA (Primary) - oklch(0.91 0.096 180.426) */
-    --primary: 180.426 96% 91%;
+    /* CTA (Primary) – Cyan */
+    --primary: 0.91 0.096 180.426;
     --primary-foreground: 240 10% 10%;
 
-    /* Accent (Secondary) - oklch(0.899 0.061 343.231) */
-    --secondary: 343.231 61% 89.9%;
+    /* Accent (Secondary) – Pinkish for desc text */
+    --secondary: 0.591 0.293 322.896;
     --secondary-foreground: 240 10% 10%;
 
     --muted: 0 0% 96.1%;
@@ -41,7 +41,17 @@
     --chart-5: 27 87% 67%;
 
     --radius: 0.5rem;
+
+    
   }
+  .text-glow-light {
+    text-shadow: 0 0 12px oklch(0.91 0.096 180.426 / 0.6);
+  }
+
+  .dark .text-glow-dark {
+    text-shadow: 0 0 12px oklch(0.91 0.096 180.426 / 0.6); /* cyan glow */
+  }
+
 
   .dark {
     --background: 0 0% 3.9%;
@@ -53,13 +63,13 @@
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    /* CTA */
-    --primary: 180.426 96% 91%;
+    /* CTA (Primary) – Same cyan in dark mode */
+    --primary: 0.91 0.096 180.426;
     --primary-foreground: 240 10% 10%;
 
-    /* Accent */
-    --secondary: 343.231 61% 89.9%;
-    --secondary-foreground: 240 10% 10%;
+    /* Accent (Secondary) – Same pinkish in dark */
+    --secondary: 0.591 0.293 322.896;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
@@ -89,6 +99,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 
 /* 🔵 Hero underline gradient */
 .hero-underline::after {

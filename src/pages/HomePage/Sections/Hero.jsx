@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
-import { ArrowDown, Github, Linkedin } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -9,119 +8,118 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
 
-  // Floating image Y offsets based on scroll
-  const orbY = useTransform(scrollYProgress, [0, 1], [0, 150]); // Black orb goes down
-  const objY = useTransform(scrollYProgress, [0, 1], [0, -150]); // Other object goes up
+  const orbY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const orbRightY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const orbRightX = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  const floatControls = useAnimation();
+
+  useEffect(() => {
+    floatControls.start({
+      y: [0, -10, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    });
+  }, [floatControls]);
 
   return (
     <section
       ref={heroRef}
       id="home"
-      className="relative isolate min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 px-6 sm:px-10 lg:px-28 py-24 overflow-hidden"
+      className="relative isolate min-h-screen flex items-center justify-center px-6 sm:px-10 lg:px-28 py-24 bg-background text-foreground overflow-hidden"
     >
-      {/* Floating Orb */}
+      {/* Top Left Orb */}
       <motion.img
         src="/black-orb.png"
-        alt="Black Orb"
+        alt="Black Orb Left"
         style={{ y: orbY }}
-        className="absolute top-16 left-10 w-28 md:w-36 opacity-80 drop-shadow-2xl pointer-events-none z-0"
+        className="absolute top-10 left-6 w-20 sm:w-24 md:w-28 lg:w-32 opacity-80 drop-shadow-2xl pointer-events-none z-0"
       />
 
-      {/* Floating Object */}
-      <motion.img
-        src="/floating-object.png"
-        alt="Floating Object"
-        style={{ y: objY }}
-        className="absolute bottom-10 right-8 w-32 md:w-40 opacity-80 drop-shadow-2xl pointer-events-none z-0"
-      />
+      {/* Bottom Right Orb - Enhanced */}
+      <motion.div
+        style={{ y: orbRightY, x: orbRightX, scale: orbScale }}
+        className="absolute bottom-6 right-6 pointer-events-none z-0"
+      >
+        <motion.div className="w-28 sm:w-32 md:w-40 lg:w-48 rounded-full">
+          <div className="relative w-full h-full">
+            <img
+              src="/black-orb.png"
+              alt="Black Orb Right"
+              className="relative w-full h-full object-cover rounded-full opacity-80"
+            />
+          </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl w-full gap-16 z-10">
-        {/* LEFT */}
+      {/* Floating Glow Accent Top Right */}
+      <motion.div
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, 50]) }}
+        animate={floatControls}
+        className="absolute top-10 right-10 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary opacity-30 blur-2xl z-0"
+      ></motion.div>
+
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 max-w-7xl w-full">
+        {/* LEFT: Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="space-y-6 max-w-xl text-center md:text-left w-full"
+          className="order-1 lg:order-none w-full text-center lg:text-left space-y-6"
         >
-          <p className="text-sm sm:text-base text-violet-600 tracking-wider font-dancing">
-            Full-Stack Developer
-          </p>
-
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight">
-            Tanzeel
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+            I code. I think. <span className="text-primary">I design.</span> I
+            do everything there is to do.
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-700 max-w-md mx-auto md:mx-0">
-            I build fast, modern, and fully responsive web apps with the MERN
-            stack.
+          <p className="text-accent text-sm sm:text-base font-light max-w-xl mx-auto lg:mx-0">
+            Turning caffeine & ideas into elegant, clean fullstack magic.
           </p>
 
-          {/* Tech Icons */}
-          <div className="max-w-6xl mx-auto text-center bg-transparent flex items-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              <div className="bg-transparent rounded-2xl p-6 hover:shadow-[0_8px_30px_rgba(56,189,248,0.7)] transition duration-300">
-                <i className="si si-react text-sky-400 text-4xl mb-3"></i>
-              </div>
-              <div className="bg-transparent rounded-2xl p-6 hover:shadow-[0_8px_30px_rgba(103,232,249,0.7)] transition duration-300">
-                <i className="si si-tailwindcss text-cyan-400 text-4xl mb-3"></i>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex justify-center md:justify-start gap-4 pt-4">
+          {/* CTA */}
+          <div className="pt-4">
             <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:scale-110 transition"
+              href="#contact"
+              className="
+                inline-block px-7 py-3.5 sm:px-6 sm:py-3 rounded-md transition-all duration-300 ease-in-out
+                text-base sm:text-sm font-semibold bg-[#46ecd5] text-black
+                hover:scale-[1.05] hover:shadow-[0_8px_24px_oklch(0_0_0_/_0.25)]
+                active:scale-[0.98]
+              "
             >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:scale-110 transition"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-          </div>
-
-          {/* CTA Button */}
-          <div className="flex justify-center md:justify-start">
-            <a
-              href="#projects"
-              className="mt-6 w-full sm:w-auto text-center inline-flex items-center gap-2 rounded-md bg-black px-6 py-3 text-white text-sm sm:text-base font-medium shadow-[-4px_5px_10px_rgba(0,0,0,0.7)] hover:bg-gray-800 transition-all"
-            >
-              View Projects
-              <ArrowDown className="w-4 h-4 animate-pulse" />
+              <span className="bg-gradient-to-r from-black to-neutral-800 bg-clip-text text-transparent">
+                Contact Me
+              </span>
             </a>
           </div>
         </motion.div>
 
-        {/* RIGHT */}
+        {/* RIGHT: Hero Image */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="w-full max-w-sm md:max-w-md h-[360px] md:h-[440px]"
+          className="w-full max-w-sm sm:max-w-md md:max-w-lg"
         >
-          <motion.div
-            className="bg-black rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.7)] h-full relative flex items-center justify-center"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          >
+          <motion.div animate={floatControls}>
+            {/* Light mode image */}
             <img
-              src="/about.jpg"
-              alt="Developer workspace"
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              src="/Hero.svg"
+              alt="Hero Light"
+              className="w-full h-auto rounded-3xl object-cover dark:hidden"
             />
-            <div className="relative z-10 text-center px-6">
-              <p className="text-white text-xl font-semibold leading-relaxed">
-                “Shipping clean code <br /> since 2024.”
-              </p>
-            </div>
+
+            {/* Dark mode image */}
+            <img
+              src="/Hero-gray.svg"
+              alt="Hero Dark"
+              className="w-full h-auto rounded-3xl object-cover hidden dark:block"
+            />
           </motion.div>
         </motion.div>
       </div>
