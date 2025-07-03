@@ -14,9 +14,10 @@ function HomePage() {
     <>
       <NavbarCom />
       <Hero />
+      <Projects />
       <About />
       <Skills />
-      <Projects />
+
       <Faq />
       <Contact />
       <Footer />

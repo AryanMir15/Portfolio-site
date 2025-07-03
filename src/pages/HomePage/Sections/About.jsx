@@ -6,7 +6,7 @@ function About() {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r flex flex-col md:flex-row md:items-center justify-evenly from-gray-50 to-white text-gray-900 py-24 overflow-hidden"
+      className="bg-gradient-to-r flex flex-col md:flex-row md:items-center justify-evenly from-emerald-200 to-white text-gray-900 py-24 overflow-hidden"
     >
       <div className="flex items-center justify-evenly  mx-auto px-6 flex-col md:flex-row">
         {/*   LEFT CARD */}
