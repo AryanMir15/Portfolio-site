@@ -16,7 +16,6 @@ function HomePage() {
       <Hero />
       <Projects />
       <About />
-      <Skills />
 
       <Faq />
       <Contact />

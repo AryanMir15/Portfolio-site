@@ -9,7 +9,7 @@ import {
 const Faq = () => {
   return (
     <section className="max-w-2xl mx-auto my-12 px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center text-neutral-800">
+      <h2 className="text-3xl font-bold mb-6 text-center text-accent">
         Frequently Asked Questions
       </h2>
 

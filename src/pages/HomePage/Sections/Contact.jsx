@@ -1,23 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-gray-950 text-white py-16 px-4 sm:px-6 lg:px-8"
+      className="py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white dark:bg-gradient-to-b dark:from-[#0a0a0a] dark:via-[#0e0e0e] dark:to-[#121212] text-center transition-colors duration-500"
     >
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-        <p className="text-gray-400 mb-10">
-          Got a project or just wanna chat? Shoot me an email directly at{" "}
-          <a
-            href="mailto:tanzeelmir112@gmail.com"
-            className="text-indigo-400 hover:underline"
-          >
-            tanzeelmir112@gmail.com
-          </a>{" "}
-          — I’ll hit you back as soon as I can.
-        </p>
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-10 text-gray-900 dark:text-white leading-tight">
+          Let’s build your next website — <br className="hidden sm:block" />
+          done right.
+        </h2>
+
+        <Link
+          to="/contact-me"
+          className="inline-block px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg font-semibold transition duration-300 hover:bg-gray-800 dark:hover:bg-gray-200"
+        >
+          Contact Me
+        </Link>
       </div>
     </section>
   );
