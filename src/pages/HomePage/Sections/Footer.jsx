@@ -1,45 +1,62 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Footer() {
   return (
-    <footer className="bg-white dark:bg-black text-black dark:text-gray-300 pt-16 pb-6 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        {/* Left: Navigation Links */}
-        <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
+    <footer className="bg-background text-foreground pt-16 pb-6 transition-colors duration-300 border-t border-border">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-8 sm:flex-row sm:justify-between sm:items-center">
+        {/* Left: Brand and Navigation */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} Tanzeel Mir
           </p>
-          <div className="flex gap-4 text-sm">
-            <Link to="/" className="hover:underline transition">
+          <div className="flex flex-wrap gap-4 text-sm">
+            <HashLink
+              smooth
+              to="/#home"
+              className="hover:text-neutral-500 transition"
+            >
               Home
-            </Link>
-            <Link to="/#about" className="hover:underline transition">
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#about"
+              className="hover:text-neutral-500 transition"
+            >
               About
-            </Link>
-            <Link to="/#projects" className="hover:underline transition">
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#projects"
+              className="hover:text-neutral-500 transition"
+            >
               Projects
-            </Link>
-            <Link to="/contact-me" className="hover:underline transition">
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#contact"
+              className="hover:text-neutral-500 transition"
+            >
               Contact
-            </Link>
+            </HashLink>
           </div>
         </div>
 
         {/* Right: Socials */}
-        <div className="flex items-center gap-5 text-lg">
+        <div className="flex gap-5 items-center justify-center sm:justify-end">
+          {/* Email icon optional — no real icon used */}
           <a
             href="mailto:tanzeelmir112@gmail.com"
-            className="hover:text-black dark:hover:text-white transition"
+            className="hover:text-neutral-500 transition"
             aria-label="Email"
           >
-            <i className="si si-mail" />
+            📧
           </a>
+
           <a
             href="https://github.com/AryanMir15"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
             className="hover:opacity-80 transition"
           >
             <img
@@ -52,7 +69,6 @@ function Footer() {
             href="https://www.linkedin.com/in/tanzeel-mir-45615734b"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
             className="hover:opacity-80 transition"
           >
             <img
@@ -65,7 +81,6 @@ function Footer() {
             href="https://www.fiverr.com/s/99Qb1zE"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Fiverr"
             className="hover:opacity-80 transition"
           >
             <img
@@ -78,12 +93,11 @@ function Footer() {
             href="https://x.com/Tanzeelmirr"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter / X"
             className="hover:opacity-80 transition"
           >
             <img
               src="https://img.icons8.com/ios-filled/50/000000/x--v1.png"
-              alt="X logo"
+              alt="X"
               className="w-5 h-5 dark:invert"
             />
           </a>

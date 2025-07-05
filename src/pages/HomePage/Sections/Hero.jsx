@@ -40,7 +40,7 @@ const Hero = () => {
       {/* 👑 MAIN CONTENT */}
       <div
         className="relative z-20 flex flex-col items-center justify-center text-center space-y-6 max-w-4xl
-                   pt-32 sm:pt-0"
+                   pt-44 sm:pt-0"
       >
         <motion.h1
           initial={{ opacity: 0, y: -30 }}

@@ -63,7 +63,7 @@ export default function NavbarCom() {
       className={`z-50 sticky top-0 w-full px-4 py-2 shadow-md
       bg-background/80 dark:bg-background/30 backdrop-blur-md
       rounded-md h-14
-      lg:top-4 lg:left-4 lg:right-4 lg:mx-auto lg:max-w-6xl lg:rounded-full lg:h-auto`}
+      lg:top-4 lg:left-4 lg:right-4 lg:mx-auto lg:max-w-6xl lg:rounded-md lg:h-auto`}
     >
       <div className="flex items-center justify-between text-foreground">
         {/* Left: Theme toggle + Logo */}
@@ -116,13 +116,15 @@ export default function NavbarCom() {
       <Collapse open={openNav}>
         <div className="mt-2 rounded-md bg-background/90 dark:bg-background/80 backdrop-blur-md shadow-md p-4">
           {navList}
-          <Button
-            fullWidth
-            size="sm"
-            className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
-          >
-            <span>Contact Me</span>
-          </Button>
+          <HashLink smooth to="/#contact">
+            <Button
+              fullWidth
+              size="sm"
+              className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
+            >
+              <span>Contact Me</span>
+            </Button>
+          </HashLink>
         </div>
       </Collapse>
     </Navbar>

@@ -9,8 +9,8 @@ function LearnMore() {
       <NavbarCom />
 
       {/* 🧠 About Me Section */}
-      <section className="px-6 sm:px-10 lg:px-32 py-24 text-foreground bg-background">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <section className="px-6 sm:px-10 lg:px-32 py-24 text-foreground bg-background overflow-hidden">
+        <div className="max-w-4xl mx-auto space-y-6 fade-diagonal">
           <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
             Turning ideas into digital reality, one commit at a time.
           </h1>

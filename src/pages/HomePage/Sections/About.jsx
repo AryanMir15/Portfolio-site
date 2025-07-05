@@ -21,7 +21,7 @@ function About() {
               useful web products that actually matter.
             </p>
             <Link
-              to="/about"
+              to="/learn-more"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition font-medium"
             >
               Learn More <ArrowRight className="w-4 h-4" />
