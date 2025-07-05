@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -72,19 +73,19 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="pt-4"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact-me"
             className="
-              inline-block px-7 py-3.5 sm:px-6 sm:py-3 rounded-md transition-all duration-300 ease-in-out
-              text-base sm:text-sm font-semibold bg-[#46ecd5] text-black
-              hover:scale-[1.05] hover:shadow-[0_8px_24px_oklch(0_0_0_/_0.25)]
-              active:scale-[0.98] mb-32 md:mb-0
-            "
+    inline-block px-7 py-3.5 sm:px-6 sm:py-3 rounded-md transition-all duration-300 ease-in-out
+    text-base sm:text-sm font-semibold bg-[#46ecd5] text-black
+    hover:scale-[1.05] hover:shadow-[0_8px_24px_oklch(0_0_0_/_0.25)]
+    active:scale-[0.98] mb-32 md:mb-0
+  "
           >
             <span className="bg-gradient-to-r from-black to-neutral-800  bg-clip-text text-transparent">
               Contact Me
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

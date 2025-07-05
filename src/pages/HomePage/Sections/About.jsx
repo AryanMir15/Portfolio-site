@@ -59,12 +59,12 @@ function About() {
               <p className="text-muted-foreground text-sm mb-4">
                 Let’s connect and build something awesome together.
               </p>
-              <a
-                href="/contact"
+              <Link
+                to="/contact-me"
                 className="inline-block w-fit px-5 py-2 border border-black dark:border-white rounded-lg font-semibold text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
               >
                 Contact Me
-              </a>
+              </Link>
             </motion.div>
 
             {/* Tech Stack Card */}

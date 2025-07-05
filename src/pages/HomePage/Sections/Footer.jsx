@@ -1,5 +1,6 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -32,13 +33,13 @@ function Footer() {
             >
               Projects
             </HashLink>
-            <HashLink
+            <Link
               smooth
-              to="/#contact"
+              to="/contact-me"
               className="hover:text-neutral-500 transition"
             >
               Contact
-            </HashLink>
+            </Link>
           </div>
         </div>
 

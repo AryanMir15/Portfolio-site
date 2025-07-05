@@ -88,14 +88,15 @@ export default function NavbarCom() {
 
         {/* Right side: Contact CTA + Mobile toggle */}
         <div className="flex items-center gap-2">
-          <HashLink smooth to="/#contact">
+          <Link to="/contact-me">
             <Button
+              fullWidth
               size="sm"
-              className="hidden lg:inline-block bg-black text-white dark:bg-white dark:text-black transition-colors"
+              className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
             >
               <span>Contact Me</span>
             </Button>
-          </HashLink>
+          </Link>
 
           <div className="flex items-center justify-center lg:hidden h-10 w-10">
             <button
@@ -116,7 +117,7 @@ export default function NavbarCom() {
       <Collapse open={openNav}>
         <div className="mt-2 rounded-md bg-background/90 dark:bg-background/80 backdrop-blur-md shadow-md p-4">
           {navList}
-          <HashLink smooth to="/#contact">
+          <Link to="/contact-me">
             <Button
               fullWidth
               size="sm"
@@ -124,7 +125,7 @@ export default function NavbarCom() {
             >
               <span>Contact Me</span>
             </Button>
-          </HashLink>
+          </Link>
         </div>
       </Collapse>
     </Navbar>

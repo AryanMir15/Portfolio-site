@@ -8,7 +8,7 @@ function ContactMe() {
     <>
       <NavbarCom />
       <main className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0e0e0e] text-black dark:text-white transition-colors duration-500">
-        <div className="max-w-3xl mx-auto text-center space-y-10">
+        <div className="max-w-3xl mx-auto text-center space-y-10 fade-diagonal">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Contact Me</h1>
           <p className="text-muted-foreground text-lg">
             Feel free to reach out if you have any questions, collaboration
