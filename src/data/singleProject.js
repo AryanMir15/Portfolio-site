@@ -1,5 +1,42 @@
 const singleProjectData = [
   {
+    id: 14,
+    title: "Client Portal – Freelance Tracker (SaaS)",
+    description:
+      "A fullstack MERN SaaS app that lets freelancers manage client project submissions, track statuses, and update timelines via an admin dashboard.",
+    stack: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
+    liveLink: "", // add later
+    githubLink: "", // add later
+    details: `🧠 **Client Portal – Freelance Project Tracker App (Fullstack SaaS)**
+
+A fullstack client management platform where clients can submit project requests and the admin can manage them through a dedicated dashboard. Built from scratch using the MERN stack, this app is fully responsive, secured with JWT, and structured with modular clean code both on the frontend and backend.
+
+### 🔧 Key Features:
+- **Client Auth**: Register/login & submit new projects
+- **Admin Dashboard**: View, edit, delete, and update project statuses
+- **Full CRUD**: Secure routes, protected data access
+- **Custom Components**: ProjectCard, FormRow, StatusBadge, ConfirmModal, Toasts
+- **React Context**: Global project state management
+- **Frontend**: Tailwind CSS + dark/light theme ready
+- **Backend**: JWT, secure cookies, modular Express server
+
+All API endpoints tested. Built like a real startup tool, not a student demo.
+
+### 💥 Tech Stack:
+React · Tailwind · Node.js · Express · MongoDB · JWT · Context API
+
+### 📈 Future Upgrades:
+- Client-side dashboard
+- Project filtering & sorting
+- Email notifications
+- Stripe payments
+- Mobile version
+
+This isn’t just a toy project. It’s my first real-world SaaS and I'm stupidly proud of it.`,
+    image: "/projects/client-portal.png", // replace with your image path
+  },
+
+  {
     id: 11,
     title: "Amazon Clone (FakeCommerce™)",
     description:

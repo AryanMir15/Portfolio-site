@@ -1,24 +1,32 @@
 import React from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Navbar from "../HomePage/Sections/Navbar";
+import { useLocation, Link } from "react-router-dom";
+import NavbarCom from "../HomePage/Sections/Navbar";
 import Footer from "../HomePage/Sections/Footer";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import {
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiJsonwebtokens,
+  SiPostman,
+  SiReact,
+  SiTailwindcss,
+} from "react-icons/si";
 import Contact from "../HomePage/Sections/Contact";
-import cocktailData from "@/data/Single Projects/cocktail";
-import { SiReact, SiTailwindcss } from "react-icons/si";
+import cpmData from "@/data/Single Projects/cpmdata";
 
-function CocktailProject() {
-  const { title, image, githubLink, liveLink } = cocktailData;
-
-  // Scroll to top on load
+function CpmProject() {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  const { title, image, githubLink, liveLink } = cpmData;
+
   return (
     <>
-      <Navbar />
+      <NavbarCom />
 
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0e0e0e] text-black dark:text-white transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
@@ -35,24 +43,23 @@ function CocktailProject() {
                   About the project
                 </h3>
                 <p className="text-muted-foreground">
-                  Cocktail Explorer is a React + Tailwind-based web app that
-                  lets users search for drinks using the CocktailDB API, view
-                  detailed info for each drink, and explore new cocktails
-                  interactively.
+                  CPM (Client Portal Manager) is a fullstack freelance tracker
+                  app built with the MERN stack. Clients can submit projects,
+                  and admins can manage them via dashboards.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">My Role</h3>
                 <p className="text-muted-foreground">
-                  Sole developer – handled API fetching, dynamic routing, UI/UX,
-                  and responsive design.
+                  Fullstack dev – built authentication, UI, admin dashboard
+                  logic, and MongoDB models.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">Timeframe</h3>
-                <p className="text-muted-foreground">5–6 days</p>
+                <p className="text-muted-foreground">2–3 weeks</p>
               </div>
             </div>
 
@@ -65,7 +72,7 @@ function CocktailProject() {
             </div>
           </div>
 
-          {/* Tech Stack */}
+          {/* Tech Stack (Minimal, includes React + Tailwind) */}
           <section className="mb-20">
             <h2 className="text-2xl font-semibold mb-10 text-center">
               Tech Stack
@@ -74,6 +81,11 @@ function CocktailProject() {
               {[
                 { icon: SiReact, name: "React" },
                 { icon: SiTailwindcss, name: "Tailwind CSS" },
+                { icon: SiNodedotjs, name: "Node.js" },
+                { icon: SiExpress, name: "Express" },
+                { icon: SiMongodb, name: "MongoDB" },
+                { icon: SiJsonwebtokens, name: "JWT" },
+                { icon: SiPostman, name: "Postman" },
               ].map(({ icon: Icon, name }, i) => (
                 <div
                   key={i}
@@ -93,17 +105,18 @@ function CocktailProject() {
             <section>
               <h3 className="text-2xl font-semibold mb-3">Project Overview</h3>
               <p className="text-muted-foreground">
-                This project uses the CocktailDB API to allow users to explore
-                drinks by name, browse recipes, and view full ingredient lists.
-                Built to reinforce state management and conditional rendering.
+                A centralized hub for freelancers and clients to manage
+                projects, with secure login, project status, and admin-side
+                workflow updates.
               </p>
             </section>
 
             <section>
               <h3 className="text-2xl font-semibold mb-3">Design Philosophy</h3>
               <p className="text-muted-foreground">
-                Minimal, clean, and mobile-friendly. Navigation is kept simple
-                with clear feedback. Components are modular and responsive.
+                Clean dashboard UI, minimal friction for client input, and
+                intuitive project state indicators. Designed for practical
+                real-world use.
               </p>
             </section>
 
@@ -112,18 +125,19 @@ function CocktailProject() {
                 Mobile-First Approach
               </h3>
               <p className="text-muted-foreground">
-                Responsive design ensures that the search input, cocktail cards,
-                and detail pages look polished across devices.
+                The design adapts smoothly across screens, ensuring clients and
+                admins can interact easily on both desktop and mobile.
               </p>
             </section>
 
             <section>
               <h3 className="text-2xl font-semibold mb-3">Key Features</h3>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Live cocktail search via API</li>
-                <li>Routing for drink detail pages</li>
-                <li>Responsive grid for cocktail previews</li>
-                <li>Clean separation of components and logic</li>
+                <li>JWT auth with role separation (admin/client)</li>
+                <li>Project CRUD with live status updates</li>
+                <li>Responsive admin/client dashboards</li>
+                <li>Global project state with context</li>
+                <li>Secure and scalable API</li>
               </ul>
             </section>
 
@@ -132,9 +146,9 @@ function CocktailProject() {
                 Impact and Results
               </h3>
               <p className="text-muted-foreground">
-                This project solidified my understanding of React fundamentals.
-                It showcases how thoughtful UI and API logic can create a fluid
-                user experience.
+                This project is a real-world SaaS template for freelance work
+                management. It's built for clarity, maintainability, and
+                practical daily use.
               </p>
             </section>
 
@@ -171,4 +185,4 @@ function CocktailProject() {
   );
 }
 
-export default CocktailProject;
+export default CpmProject;

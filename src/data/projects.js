@@ -2,6 +2,14 @@ import { SiNodedotjs } from "@icons-pack/react-simple-icons";
 
 const projectData = [
   {
+    id: 14,
+    title: "Client Portal – Freelance Tracker (SaaS)",
+    description:
+      "A fullstack SaaS that lets clients submit project requests and gives you a dashboard to manage, track, and update them — built from scratch with MERN.",
+    image: "/projects/CPM.png",
+    to: "client-portal", // route path for Link to work
+  },
+  {
     id: 11,
     title: "Amazon Clone",
     description:

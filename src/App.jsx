@@ -7,6 +7,7 @@ import CocktailProject from "./pages/SingleProject/cocktail";
 import ScrollToTop from "./utils/ScrollToTop";
 import LearnMore from "./pages/LearnMore";
 import NotFound from "./Boiler/NotFound";
+import CpmProject from "./pages/SingleProject/client-portal";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
           path="/projects/cocktail-explorer"
           element={<CocktailProject />}
         />
+        <Route path="/projects/client-portal" element={<CpmProject />} />
         <Route path="/learn-more" element={<LearnMore />} />
 
         {/* 👇 Fallback route goes LAST always */}

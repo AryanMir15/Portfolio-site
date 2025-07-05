@@ -18,8 +18,8 @@
 }
 
 .fade-diagonal {
-  animation: fadeDiagonal 2s ease-out forwards;
-  animation-delay: 0.3s;
+  animation: fadeDiagonal 1.5s ease-out forwards;
+  animation-delay: 0s;
   opacity: 0; /* just in case tailwind nukes it */
 }
 
