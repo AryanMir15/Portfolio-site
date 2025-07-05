@@ -6,15 +6,11 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative bg-gradient-to-br from-white via-cyan-100 to-cyan-50 dark:from-[#0a0a0a] dark:via-[#0d0d0d] dark:to-black text-foreground py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden"
+      className="relative bg-gradient-to-b from-white to-gray-50 dark:from-[#0e0e0e] dark:to-[#151515] text-foreground py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden"
     >
-      {/* Optional subtle cyan flare on sides in dark mode */}
-      <div className="hidden dark:block absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-cyan-900 to-transparent opacity-20" />
-      <div className="hidden dark:block absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-cyan-900 to-transparent opacity-20" />
-
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-16 text-foreground">
-          Projects I’ve Built
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-20 tracking-tight text-black dark:text-white">
+          My Projects
         </h2>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -23,14 +19,14 @@ function Projects() {
 
             return (
               <Link to={`/projects/${to}`} key={id}>
-                <div className="group rounded-3xl border border-border bg-white dark:bg-card shadow-xl dark:shadow-[0_15px_25px_rgba(0,255,255,0.05)] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
-                  {/* Content Section including image */}
+                <div className="group rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#1a1a1a] shadow-[0_8px_20px_rgba(0,0,0,0.4)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.05)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_12px_24px_rgba(255,255,255,0.08)] transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
+                  {/* Content */}
                   <div className="p-6 text-left flex-grow flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
                         {title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
+                      <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
                         {description}
                       </p>
                     </div>
@@ -44,9 +40,9 @@ function Projects() {
                     </div>
                   </div>
 
-                  {/* Live Preview Button */}
+                  {/* Button */}
                   <div className="px-6 pb-6">
-                    <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white dark:from-cyan-400 dark:to-cyan-300 dark:text-black py-2 rounded-lg font-semibold shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300">
+                    <button className="w-full px-4 py-2 rounded-md border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition duration-300 font-semibold">
                       Live Preview
                     </button>
                   </div>
