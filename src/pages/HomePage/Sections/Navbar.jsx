@@ -46,7 +46,12 @@ export default function NavbarCom() {
   );
 
   return (
-    <Navbar className="sticky top-4 left-4 right-4 z-50 max-w-6xl mx-auto rounded-full backdrop-blur-md bg-background/80 dark:bg-background/30 px-4 py-2 shadow-md">
+    <Navbar
+      className={`z-50 sticky top-0 w-full px-4 py-2 shadow-md
+    bg-background/80 dark:bg-background/30 backdrop-blur-md
+    rounded-md h-14
+    lg:top-4 lg:left-4 lg:right-4 lg:mx-auto lg:max-w-6xl lg:rounded-full lg:h-auto`}
+    >
       <div className="flex items-center justify-between text-foreground">
         {/* Left: Theme toggle + Logo */}
         <div className="flex items-center gap-3">
@@ -77,29 +82,61 @@ export default function NavbarCom() {
             <span>Contact Me</span>
           </Button>
 
-          <IconButton
-            variant="text"
-            className="lg:hidden text-foreground"
-            onClick={() => setOpenNav(!openNav)}
-          >
-            {openNav ? (
-              <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-            ) : (
-              <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-            )}
-          </IconButton>
+          {/* Centered Menu Icon on mobile */}
+          {/* Clean Custom Mobile Menu Toggle */}
+          <div className="flex items-center justify-center lg:hidden h-10 w-10">
+            <button
+              onClick={() => setOpenNav(!openNav)}
+              className="h-10 w-10 flex items-center justify-center text-foreground"
+            >
+              {openNav ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
+      {/* Mobile menu */}
       <Collapse open={openNav}>
-        <div className="mt-2">{navList}</div>
-        <Button
-          fullWidth
-          size="sm"
-          className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
-        >
-          <span>Contact Me</span>
-        </Button>
+        <div className="mt-2 rounded-md bg-background/90 dark:bg-background/80 backdrop-blur-md shadow-md p-4">
+          {navList}
+          <Button
+            fullWidth
+            size="sm"
+            className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
+          >
+            <span>Contact Me</span>
+          </Button>
+        </div>
       </Collapse>
     </Navbar>
   );
