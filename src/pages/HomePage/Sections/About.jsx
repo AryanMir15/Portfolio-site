@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <section className="py-40 px-4 sm:px-6 lg:px-8 bg-[#eeeeee] dark:bg-[#0e0e0e] text-foreground">
+    <section
+      className="py-40 px-4 sm:px-6 lg:px-8 bg-[#eeeeee] dark:bg-[#0e0e0e] text-foreground"
+      id="about"
+    >
       <div className="max-w-6xl mx-auto space-y-14">
         {/* Section Heading */}
         <h2 className="text-4xl sm:text-5xl font-bold text-center">About</h2>

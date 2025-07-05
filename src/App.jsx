@@ -5,6 +5,7 @@ import AmazonClone from "./pages/SingleProject/amazon-clone";
 import ApiProject from "./pages/SingleProject/api";
 import CocktailProject from "./pages/SingleProject/cocktail";
 import ScrollToTop from "./utils/ScrollToTop";
+import LearnMore from "./pages/LearnMore";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/projects/cocktail-explorer"
           element={<CocktailProject />}
         />
+        <Route path="/learn-more" element={<LearnMore />} />
       </Routes>
     </>
   );
