@@ -23,7 +23,10 @@ const Hero = () => {
       className="relative isolate h-[110vh] flex items-center justify-center px-6 sm:px-10 lg:px-28 -mt-20 py-20 text-foreground overflow-hidden"
     >
       {/* 🔮 CHILLED BACKGROUND GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f3f4f6] to-[#e0e3e8] dark:from-[#0d1117] dark:to-[#161b22] z-0" />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-[#f8f9fa] to-[#e2e2e2]
+ dark:from-[#0d1117] dark:to-[#161b22] z-0"
+      />
 
       {/* 🌊 WAVE TOP */}
       <img
@@ -46,19 +49,21 @@ const Hero = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.25] sm:leading-[1.2] lg:leading-[1.15] mb-2"
         >
-          I code. I think. <span className="text-primary">I design.</span> I do
-          everything there is to do.
+          Purposeful code.
+          <br />
+          <span className="text-primary">Reliable results.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-accent text-sm sm:text-base font-light max-w-xl"
+          className="text-muted-foreground text-sm sm:text-base font-light max-w-xl mt-6"
         >
-          Turning caffeine & ideas into elegant, clean fullstack magic.
+          Fullstack systems with clean architecture, thoughtful UI, and
+          long-term maintainability.
         </motion.p>
 
         <motion.div

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomePage from "./HomePage";
 import { Routes, Route } from "react-router-dom";
 import AmazonClone from "./pages/SingleProject/amazon-clone";
@@ -8,6 +8,9 @@ import ScrollToTop from "./utils/ScrollToTop";
 import LearnMore from "./pages/LearnMore";
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
   return (
     <>
       <ScrollToTop />

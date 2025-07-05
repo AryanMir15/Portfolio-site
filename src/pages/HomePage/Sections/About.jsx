@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function About() {
   return (
@@ -10,11 +11,25 @@ function About() {
     >
       <div className="max-w-6xl mx-auto space-y-14">
         {/* Section Heading */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-center">About</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl sm:text-5xl font-bold text-center"
+        >
+          About
+        </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left: Hi I'm Tanzeel Card */}
-          <div className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center text-center min-h-[500px]">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center text-center min-h-[500px]"
+          >
             <h2 className="text-3xl font-bold mb-4">Hi, I'm Tanzeel</h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
               Full-stack dev. Passionate about clean UI, sharp logic & building
@@ -26,12 +41,18 @@ function About() {
             >
               Learn More <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </motion.div>
 
           {/* Right side: Stacked Cards */}
           <div className="lg:col-span-2 flex flex-col gap-8">
             {/* Contact Me Card */}
-            <div className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center min-h-[220px]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center min-h-[220px]"
+            >
               <h3 className="text-2xl font-bold mb-2">
                 Got a project in mind?
               </h3>
@@ -44,17 +65,23 @@ function About() {
               >
                 Contact Me
               </a>
-            </div>
+            </motion.div>
 
             {/* Tech Stack Card */}
-            <div className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center"
+            >
               <h3 className="text-2xl font-bold mb-3">Tech Stack</h3>
               <p className="text-muted-foreground text-sm mb-6">
                 Tools I use to build full-stack magic: frontend flair, backend
                 brains, and version control sanity.
               </p>
               <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-4 items-center">
-                {/* ICONS W/ BLACK BG WRAPPER */}
+                {/* ICONS */}
                 {[
                   ["si-html5", "text-orange-400"],
                   ["si-css3", "text-blue-400"],
@@ -63,19 +90,18 @@ function About() {
                   ["si-tailwindcss", "text-cyan-400"],
                   ["si-vite", "text-purple-400"],
                   ["si-git", "text-orange-500"],
-
                   ["si-express", "text-gray-300"],
                   ["si-mongodb", "text-green-400"],
-                ].map(([icon, color], index) => (
+                ].map(([icon, color], i) => (
                   <div
-                    key={index}
+                    key={i}
                     className="bg-black dark:bg-[#1a1a1a] rounded-md p-2 flex items-center justify-center"
                   >
                     <i className={`si ${icon} ${color} text-2xl`} />
                   </div>
                 ))}
 
-                {/* Node.js icon as img */}
+                {/* Node.js icon */}
                 <div className="bg-black dark:bg-[#1a1a1a] rounded-md p-2 flex items-center justify-center">
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
@@ -84,7 +110,7 @@ function About() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
