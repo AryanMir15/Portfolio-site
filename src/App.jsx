@@ -8,6 +8,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import LearnMore from "./pages/LearnMore";
 import NotFound from "./Boiler/NotFound";
 import CpmProject from "./pages/SingleProject/client-portal";
+import ContactMe from "./pages/Contact-me";
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
         />
         <Route path="/projects/client-portal" element={<CpmProject />} />
         <Route path="/learn-more" element={<LearnMore />} />
+        <Route path="/contact-me" element={<ContactMe />} />
 
         {/* 👇 Fallback route goes LAST always */}
         <Route path="*" element={<NotFound />} />
