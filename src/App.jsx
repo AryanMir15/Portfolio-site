@@ -6,11 +6,13 @@ import ApiProject from "./pages/SingleProject/api";
 import CocktailProject from "./pages/SingleProject/cocktail";
 import ScrollToTop from "./utils/ScrollToTop";
 import LearnMore from "./pages/LearnMore";
+import NotFound from "./Boiler/NotFound";
 
 function App() {
   useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
+
   return (
     <>
       <ScrollToTop />
@@ -23,6 +25,9 @@ function App() {
           element={<CocktailProject />}
         />
         <Route path="/learn-more" element={<LearnMore />} />
+
+        {/* 👇 Fallback route goes LAST always */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
