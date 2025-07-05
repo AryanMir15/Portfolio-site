@@ -61,7 +61,7 @@ function Projects() {
                     {/* Button */}
                     <div className="px-6 pb-6">
                       <button className="w-full px-4 py-2 rounded-md border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition duration-300 font-semibold">
-                        Live Preview
+                        Learn More
                       </button>
                     </div>
                   </div>
