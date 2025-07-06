@@ -87,29 +87,30 @@ export default function NavbarCom() {
         <div className="hidden lg:block">{navList}</div>
 
         {/* Right side: Contact CTA + Mobile toggle */}
-        <div className="flex items-center gap-2">
+        {/* Right side: Contact CTA (Desktop only) */}
+        <div className="hidden lg:flex items-center gap-2">
           <Link to="/contact-me">
             <Button
-              fullWidth
               size="sm"
-              className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
+              className="bg-black text-white dark:bg-white dark:text-black transition-colors"
             >
               <span>Contact Me</span>
             </Button>
           </Link>
+        </div>
 
-          <div className="flex items-center justify-center lg:hidden h-10 w-10">
-            <button
-              onClick={() => setOpenNav(!openNav)}
-              className="h-10 w-10 flex items-center justify-center text-foreground"
-            >
-              {openNav ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+        {/* Mobile menu toggle (Mobile only) */}
+        <div className="flex lg:hidden items-center justify-center h-10 w-10">
+          <button
+            onClick={() => setOpenNav(!openNav)}
+            className="h-10 w-10 flex items-center justify-center text-foreground"
+          >
+            {openNav ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
+          </button>
         </div>
       </div>
 
