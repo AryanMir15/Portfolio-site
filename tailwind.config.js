@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["Playfair Display", "serif"],
-        dancing: ['"Dancing Script"', "cursive"],
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)'],
+        dancing: ['var(--font-dancing)'],
       },
       colors: {
         background: "hsl(var(--background))",
