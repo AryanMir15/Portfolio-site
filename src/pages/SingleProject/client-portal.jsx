@@ -31,8 +31,8 @@ function CpmProject() {
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0e0e0e] text-black dark:text-white transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
           {/* Back Button */}
-          <Link 
-            to="/#projects" 
+          <Link
+            to="/#projects"
             className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />

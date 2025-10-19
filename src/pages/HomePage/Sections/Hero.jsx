@@ -53,27 +53,35 @@ const Hero = () => {
   }, []);
 
   return (
-    <main className="bg-black">
+    <main className="min-h-screen bg-black">
       <section
-        className="relative isolate min-h-[100dvh] overflow-hidden bg-black"
+        className="relative min-h-screen w-full overflow-hidden bg-black"
         id="home"
-        role="banner"
         aria-label="LinkNuke - Secure Self-Destructing Links Hero Section"
       >
-        {/* Bottom Layer: Animated Gradient Blobs */}
-        <div className="absolute inset-0 -z-30 overflow-hidden">
-          {/* Blob 1 - Top Left */}
-          <div className="absolute -left-20 -top-40 h-[600px] w-[600px] animate-blob rounded-full bg-gradient-to-r from-indigo-500/20 to-pink-500/20 opacity-70 blur-3xl" />
-
-          {/* Blob 2 - Top Right */}
-          <div className="absolute -right-20 top-1/4 h-[500px] w-[500px] animate-blob rounded-full bg-gradient-to-r from-pink-500/20 to-yellow-500/20 opacity-70 blur-3xl animation-delay-2000" />
-
-          {/* Blob 3 - Bottom Center */}
-          <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 animate-blob rounded-full bg-gradient-to-r from-yellow-500/20 to-indigo-500/20 opacity-70 blur-3xl animation-delay-4000" />
+        {/* Base Layer: Solid Background */}
+        <div className="absolute inset-0 bg-black z-0" />
+        
+        {/* Grid Layer */}
+        <div className="absolute inset-0 z-10">
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, #4b5563 1px, transparent 1px),
+                linear-gradient(to bottom, #4b5563 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px',
+              maskImage: 'radial-gradient(ellipse 70% 55% at 50% 0%, black 35%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 70% 55% at 50% 0%, black 35%, transparent 100%)',
+              zIndex: 10
+            }}
+          />
         </div>
 
-        {/* Grid Pattern Removed */}
-        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 md:py-[6rem] relative z-10">
+        {/* Content Layer */}
+        <div className="relative z-20 h-full">
+          <div className="container mx-auto h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="flex flex-col items-center text-center">
             {/* MAIN HEADLINE */}
             <div className="space-y-8 mb-8">
@@ -95,11 +103,11 @@ const Hero = () => {
             <div className="mb-8">
               {isLoggedIn ? (
                 <div className="relative inline-flex items-center justify-center gap-4 group">
-                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
                   <Link
                     to="/dashboard"
                     onClick={() => handleCTAClick("go_to_dashboard")}
-                    className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                    className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30 transition-all duration-200"
                     title="dashboard"
                   >
                     Go to Dashboard
@@ -124,11 +132,11 @@ const Hero = () => {
                 </div>
               ) : (
                 <div className="relative inline-flex items-center justify-center gap-4 group">
-                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
                   <Link
                     to="/register"
                     onClick={() => handleCTAClick("start_sharing_securely")}
-                    className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                    className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30 transition-all duration-200"
                     title="Get Started"
                   >
                     Get Started For Free
@@ -158,94 +166,100 @@ const Hero = () => {
             <div className="w-full max-w-[90vw] mx-auto mt-16 sm:mt-20 md:mt-24 lg:mt-28">
               <a href="https://linknuke.whynotship.me" target="_blank" rel="noopener noreferrer" className="block w-full">
                 <div className="relative inline-flex items-center justify-center w-full group">
-                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-2xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
+                  <div className="hidden group-hover:block absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-2xl blur-lg" />
                   <img
                     src="/LinkNukeHero.png"
                     alt="LinkNuke Dashboard"
-                    className="relative w-full h-auto rounded-2xl ring-1 ring-white/10 transition-all duration-200 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:shadow-gray-600/30 cursor-pointer" style={{ maxWidth: 'none' }}
+                    className="relative w-full h-auto rounded-2xl ring-1 ring-white/10 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:shadow-gray-600/30 cursor-pointer transition-all duration-200" style={{ maxWidth: 'none' }}
                   />
                 </div>
               </a>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* CSS for animations and effects */}
-      <style jsx global>{`
-        /* Custom cursor trail */
+      </div>
+    </section>
+    
+    {/* CSS for animations and effects */}
+    <style jsx global>{`
+      /* Custom cursor trail */
+      .custom-cursor-trail {
+        position: fixed;
+        width: 16px;
+        height: 16px;
+        background: linear-gradient(45deg, #6366f1, #ec4899);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+        will-change: transform;
+      }
+      
+      /* Add a subtle pulse animation */
+      @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      }
+      
+      .custom-cursor-trail.pulse {
+        animation: pulse 2s infinite;
+      }
+      
+      /* Custom cursor trail hover effect */
+      .custom-cursor-trail:hover {
+        animation: pulse 1.5s infinite;
+      }
+      
+      /* Hide cursor trail on mobile */
+      @media (max-width: 1023px) {
         .custom-cursor-trail {
-          position: fixed;
-          width: 16px;
-          height: 16px;
-          background: linear-gradient(45deg, #6366f1, #ec4899);
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 9999;
-          opacity: 0.8;
-          transform: translate(-50%, -50%) scale(1);
-          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-          box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
-          will-change: transform;
+          display: none;
         }
-        
-        /* Add a subtle pulse animation */
-        @keyframes pulse {
-          0% { transform: translate(-50%, -50%) scale(1); }
-          50% { transform: translate(-50%, -50%) scale(1.2); }
-          100% { transform: translate(-50%, -50%) scale(1); }
-        }
-        
-        .custom-cursor-trail:hover {
-          animation: pulse 1.5s infinite;
-        }
-        
-        /* Hide cursor trail on mobile */
-        @media (max-width: 1023px) {
-          .custom-cursor-trail {
-            display: none;
-          }
-        }
-        
-        /* CTA button shine effect */
-        .shine-button {
-          position: relative;
-          overflow: hidden;
-        }
+      }
+      
+      /* CTA button shine effect */
+      .shine-button {
+        position: relative;
+        overflow: hidden;
+      }
 
-        .shine-button::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
+      .shine-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
 
-        .shine-button:hover::before {
-          left: 100%;
-        }
+      .shine-button:hover::before {
+        left: 100%;
+      }
 
-        /* Smooth scrolling */
-        html {
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html, body {
           scroll-behavior: smooth;
+          overflow-x: hidden;
         }
-
-        @media (prefers-reduced-motion: no-preference) {
-          html, body {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-          }
-        }
-      `}</style>
-    </main>
+      }
+    `}</style>
+  </main>
   );
 };
 

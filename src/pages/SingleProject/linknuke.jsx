@@ -17,7 +17,7 @@ import linknukeData from "@/data/Single Projects/linknukedata";
 
 function LinkNukeProject() {
   const location = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -32,8 +32,8 @@ function LinkNukeProject() {
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0e0e0e] text-black dark:text-white transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
           {/* Back Button */}
-          <Link 
-            to="/#projects" 
+          <Link
+            to="/#projects"
             className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -61,7 +61,7 @@ function LinkNukeProject() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">My Role</h3>
                 <p className="text-muted-foreground">
-                  Fullstack developer – built the entire application including authentication, file handling, 
+                  Fullstack developer – built the entire application including authentication, file handling,
                   link generation, and the responsive frontend interface.
                 </p>
               </div>
@@ -113,7 +113,7 @@ function LinkNukeProject() {
             <section>
               <h3 className="text-2xl font-semibold mb-3">Project Overview</h3>
               <p className="text-muted-foreground">
-                LinkNuke provides a secure way to share sensitive information through self-destructing links and files. 
+                LinkNuke provides a secure way to share sensitive information through self-destructing links and files.
                 It's perfect for sharing confidential data that should only be accessible for a limited time or number of views.
               </p>
             </section>
@@ -121,7 +121,7 @@ function LinkNukeProject() {
             <section>
               <h3 className="text-2xl font-semibold mb-3">Design Philosophy</h3>
               <p className="text-muted-foreground">
-                Clean, intuitive interface focused on security and ease of use. The design prioritizes clarity and simplicity 
+                Clean, intuitive interface focused on security and ease of use. The design prioritizes clarity and simplicity
                 while ensuring all security features are easily accessible.
               </p>
             </section>
@@ -131,7 +131,7 @@ function LinkNukeProject() {
                 Security First Approach
               </h3>
               <p className="text-muted-foreground">
-                Built with security as the top priority, featuring end-to-end encryption, automatic deletion, and secure 
+                Built with security as the top priority, featuring end-to-end encryption, automatic deletion, and secure
                 link generation to protect sensitive information.
               </p>
             </section>
@@ -152,8 +152,8 @@ function LinkNukeProject() {
                 Impact and Results
               </h3>
               <p className="text-muted-foreground">
-                LinkNuke has been successfully used to share sensitive information securely across 40+ countries. 
-                The platform's intuitive design and robust security features have made it a reliable solution for 
+                LinkNuke has been successfully used to share sensitive information securely across 40+ countries.
+                The platform's intuitive design and robust security features have made it a reliable solution for
                 professionals who need to share confidential data with peace of mind.
               </p>
             </section>

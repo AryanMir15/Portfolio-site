@@ -46,34 +46,46 @@ function App() {
     style.innerHTML = disableSmoothScroll;
     document.head.appendChild(style);
     
-    // Initialize Lenis with optimized settings
+      // Initialize Lenis with optimized settings
     const lenis = new Lenis({
-      duration: 1,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      infinite: false,
       smoothWheel: true,
       smoothTouch: false,
-      touchMultiplier: 1.5,
+      touchMultiplier: 2,
+      infinite: false,
+      wheelMultiplier: 1.2,
     });
-    
+
     // Store Lenis instance
     lenisRef.current = lenis;
-    
+
     // Animation frame loop
-    let lastTime = 0;
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-    
+
     // Set dark mode
     document.documentElement.classList.add("dark");
-    
+
+    // Enable scrolling on the body
+    document.body.style.overflow = 'auto';
+    document.body.style.height = 'auto';
+    document.documentElement.style.overflowX = 'hidden';
+    document.body.style.overflowX = 'hidden';
+
     // Cleanup
     return () => {
-      lenis.destroy();
+      if (lenis) {
+        lenis.destroy();
+      }
       document.head.removeChild(style);
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.documentElement.style.overflowX = '';
+      document.body.style.overflowX = '';
     };
   }, []);
 
