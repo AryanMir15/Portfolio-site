@@ -68,7 +68,7 @@ function LinkNukeProject() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">Timeframe</h3>
-                <p className="text-muted-foreground">3-4 weeks</p>
+                <p className="text-muted-foreground">7-8 weeks</p>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ function LinkNukeProject() {
                 Impact and Results
               </h3>
               <p className="text-muted-foreground">
-                LinkNuke has been successfully used to share sensitive information securely across 40+ countries.
+                Developed and launched in just 7-8 weeks, LinkNuke has already gained traction with visitors from 40+ countries.
                 The platform's intuitive design and robust security features have made it a reliable solution for
                 professionals who need to share confidential data with peace of mind.
               </p>
