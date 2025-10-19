@@ -2,6 +2,21 @@ import { SiNodedotjs } from "@icons-pack/react-simple-icons";
 
 const projectData = [
   {
+    id: 15,
+    title: "LinkNuke - Secure File & Link Sharing",
+    description:
+      "Secure platform for creating self-destructing links and private file sharing with automatic deletion. Perfect for sharing sensitive information securely.",
+    image: "/LinkNukeHero.png",
+    tech: [
+      { icon: "si si-react", color: "text-sky-400" },
+      { icon: "si si-nodedotjs", color: "text-green-400" },
+      { icon: "si si-mongodb", color: "text-green-400" },
+      { icon: "si si-tailwindcss", color: "text-cyan-400" },
+      { icon: "si si-jwt", color: "text-pink-400" },
+    ],
+    to: "linknuke",
+  },
+  {
     id: 14,
     title: "Client Portal – Freelance Tracker (SaaS)",
     description:

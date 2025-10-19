@@ -8,6 +8,7 @@ import CocktailProject from "./pages/SingleProject/cocktail";
 import LearnMore from "./pages/LearnMore";
 import NotFound from "./Boiler/NotFound";
 import CpmProject from "./pages/SingleProject/client-portal";
+import LinkNukeProject from "./pages/SingleProject/linknuke";
 import ContactMe from "./pages/Contact-me";
 
 // Disable default smooth scrolling
@@ -85,6 +86,7 @@ function App() {
         <Route path="/projects/jobs-API-Backend" element={<ApiProject />} />
         <Route path="/projects/cocktail-explorer" element={<CocktailProject />} />
         <Route path="/projects/client-portal" element={<CpmProject />} />
+        <Route path="/projects/linknuke" element={<LinkNukeProject />} />
         <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/contact-me" element={<ContactMe />} />
         <Route path="*" element={<NotFound />} />

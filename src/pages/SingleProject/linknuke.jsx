@@ -9,20 +9,21 @@ import {
   SiExpress,
   SiMongodb,
   SiJsonwebtokens,
-  SiPostman,
   SiReact,
   SiTailwindcss,
 } from "react-icons/si";
 import Contact from "../HomePage/Sections/Contact";
-import cpmData from "@/data/Single Projects/cpmdata";
+import linknukeData from "@/data/Single Projects/linknukedata";
 
-function CpmProject() {
+function LinkNukeProject() {
   const location = useLocation();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const { title, image, githubLink, liveLink } = cpmData;
+  const { title, image, githubLink, liveLink } = linknukeData;
+
 
   return (
     <>
@@ -52,23 +53,22 @@ function CpmProject() {
                   About the project
                 </h3>
                 <p className="text-muted-foreground">
-                  CPM (Client Portal Manager) is a fullstack freelance tracker
-                  app built with the MERN stack. Clients can submit projects,
-                  and admins can manage them via dashboards.
+                  LinkNuke is a secure platform for creating self-destructing links and private file sharing with automatic deletion.
+                  It's designed for sharing sensitive information that shouldn't remain accessible indefinitely.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">My Role</h3>
                 <p className="text-muted-foreground">
-                  Fullstack dev – built authentication, UI, admin dashboard
-                  logic, and MongoDB models.
+                  Fullstack developer – built the entire application including authentication, file handling, 
+                  link generation, and the responsive frontend interface.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">Timeframe</h3>
-                <p className="text-muted-foreground">2–3 weeks</p>
+                <p className="text-muted-foreground">3-4 weeks</p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ function CpmProject() {
             </div>
           </div>
 
-          {/* Tech Stack (Minimal, includes React + Tailwind) */}
+          {/* Tech Stack */}
           <section className="mb-20">
             <h2 className="text-2xl font-semibold mb-10 text-center">
               Tech Stack
@@ -94,7 +94,6 @@ function CpmProject() {
                 { icon: SiExpress, name: "Express" },
                 { icon: SiMongodb, name: "MongoDB" },
                 { icon: SiJsonwebtokens, name: "JWT" },
-                { icon: SiPostman, name: "Postman" },
               ].map(({ icon: Icon, name }, i) => (
                 <div
                   key={i}
@@ -114,39 +113,37 @@ function CpmProject() {
             <section>
               <h3 className="text-2xl font-semibold mb-3">Project Overview</h3>
               <p className="text-muted-foreground">
-                A centralized hub for freelancers and clients to manage
-                projects, with secure login, project status, and admin-side
-                workflow updates.
+                LinkNuke provides a secure way to share sensitive information through self-destructing links and files. 
+                It's perfect for sharing confidential data that should only be accessible for a limited time or number of views.
               </p>
             </section>
 
             <section>
               <h3 className="text-2xl font-semibold mb-3">Design Philosophy</h3>
               <p className="text-muted-foreground">
-                Clean dashboard UI, minimal friction for client input, and
-                intuitive project state indicators. Designed for practical
-                real-world use.
+                Clean, intuitive interface focused on security and ease of use. The design prioritizes clarity and simplicity 
+                while ensuring all security features are easily accessible.
               </p>
             </section>
 
             <section>
               <h3 className="text-2xl font-semibold mb-3">
-                Mobile-First Approach
+                Security First Approach
               </h3>
               <p className="text-muted-foreground">
-                The design adapts smoothly across screens, ensuring clients and
-                admins can interact easily on both desktop and mobile.
+                Built with security as the top priority, featuring end-to-end encryption, automatic deletion, and secure 
+                link generation to protect sensitive information.
               </p>
             </section>
 
             <section>
               <h3 className="text-2xl font-semibold mb-3">Key Features</h3>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>JWT auth with role separation (admin/client)</li>
-                <li>Project CRUD with live status updates</li>
-                <li>Responsive admin/client dashboards</li>
-                <li>Global project state with context</li>
-                <li>Secure and scalable API</li>
+                <li>Secure, self-destructing links and files</li>
+                <li>Password protection for shared content</li>
+                <li>Custom expiration settings</li>
+                <li>One-time view option for sensitive information</li>
+                <li>Real-time link tracking</li>
               </ul>
             </section>
 
@@ -155,52 +152,29 @@ function CpmProject() {
                 Impact and Results
               </h3>
               <p className="text-muted-foreground">
-                This project is a real-world SaaS template for freelance work
-                management. It's built for clarity, maintainability, and
-                practical daily use.
+                LinkNuke has been successfully used to share sensitive information securely across 40+ countries. 
+                The platform's intuitive design and robust security features have made it a reliable solution for 
+                professionals who need to share confidential data with peace of mind.
               </p>
             </section>
-
-            <section className="mt-20 text-center">
-              <h2 className="text-3xl font-bold mb-6">Like what you see?</h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Have a project in mind? Let's work together to bring your ideas to life.
-              </p>
-              <a
-                href="/#contact"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
-              >
-                Get in Touch
-                <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </section>
-
-            {/* CTA Buttons */}
-            <div className="flex gap-4 pt-8">
-              {liveLink && (
-                <a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 rounded-lg font-semibold border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
-                >
-                  Live Preview
-                </a>
-              )}
-              {githubLink && (
-                <a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 rounded-lg font-semibold border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
-                >
-                  GitHub
-                </a>
-              )}
-            </div>
           </div>
+
+          {/* CTA */}
+          <section className="mt-20 text-center">
+            <h2 className="text-3xl font-bold mb-6">Like what you see?</h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Have a project in mind? Let's work together to bring your ideas to life.
+            </p>
+            <a
+              href="/#contact"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+            >
+              Get in Touch
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </a>
+          </section>
         </div>
       </main>
 
@@ -210,4 +184,4 @@ function CpmProject() {
   );
 }
 
-export default CpmProject;
+export default LinkNukeProject;

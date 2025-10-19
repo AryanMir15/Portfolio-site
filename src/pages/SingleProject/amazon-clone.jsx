@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import NavbarCom from "../HomePage/Sections/Navbar";
 import Footer from "../HomePage/Sections/Footer";
 import singleProjectData from "@/data/singleProject";
 import Contact from "../HomePage/Sections/Contact";
 import { SiHtml5, SiCss3, SiJavascript } from "react-icons/si";
+import { ArrowLeft } from "lucide-react";
 
 function AmazonClone() {
   const amazonCloneData = singleProjectData.find((item) => item.id === 11);
@@ -24,6 +25,15 @@ function AmazonClone() {
 
       <main className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0e0e0e] text-black dark:text-white transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
+          {/* Back Button */}
+          <Link 
+            to="/#projects" 
+            className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to projects
+          </Link>
+
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl font-bold mb-16 text-center">
             {title}
@@ -142,6 +152,22 @@ function AmazonClone() {
                 create a convincing product experience. It proves frontend alone
                 can replicate high-functionality workflows when done with care.
               </p>
+            </section>
+
+            <section className="mt-20 text-center">
+              <h2 className="text-3xl font-bold mb-6">Like what you see?</h2>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Have a project in mind? Let's work together to bring your ideas to life.
+              </p>
+              <a
+                href="/#contact"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+              >
+                Get in Touch
+                <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </a>
             </section>
 
             {/* CTA Buttons */}
