@@ -10,6 +10,7 @@ import NotFound from "./Boiler/NotFound";
 import CpmProject from "./pages/SingleProject/client-portal";
 import LinkNukeProject from "./pages/SingleProject/linknuke";
 import ContactMe from "./pages/Contact-me";
+import PageLoader from "./components/PageLoader";
 
 // Disable default smooth scrolling
 const disableSmoothScroll = `
@@ -91,16 +92,17 @@ function App() {
 
   return (
     <>
+      <PageLoader />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/projects/amazon-clone" element={<AmazonClone />} />
-        <Route path="/projects/jobs-API-Backend" element={<ApiProject />} />
-        <Route path="/projects/cocktail-explorer" element={<CocktailProject />} />
-        <Route path="/projects/client-portal" element={<CpmProject />} />
-        <Route path="/projects/linknuke" element={<LinkNukeProject />} />
+        <Route path="/amazon-clone" element={<AmazonClone />} />
+        <Route path="/api" element={<ApiProject />} />
+        <Route path="/cocktail" element={<CocktailProject />} />
+        <Route path="/client-portal" element={<CpmProject />} />
+        <Route path="/linknuke" element={<LinkNukeProject />} />
+        <Route path="/contact" element={<ContactMe />} />
         <Route path="/learn-more" element={<LearnMore />} />
-        <Route path="/contact-me" element={<ContactMe />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

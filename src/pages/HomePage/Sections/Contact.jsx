@@ -9,7 +9,7 @@ const Contact = () => {
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold mb-10 text-gray-900 dark:text-white leading-tight">
-          Let’s build your next website — <br className="hidden sm:block" />
+          Let’s build your next website <br className="hidden sm:block" />
           done right.
         </h2>
 

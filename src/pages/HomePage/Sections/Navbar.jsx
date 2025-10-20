@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Collapse, Button, Typography } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Moon } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom"; // for full page route
 
@@ -16,9 +15,6 @@ export default function NavbarCom() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-  };
 
   const navItems = [
     { label: "Home", href: "/#home", isHash: true },
@@ -66,14 +62,8 @@ export default function NavbarCom() {
       lg:top-4 lg:left-4 lg:right-4 lg:mx-auto lg:max-w-6xl lg:rounded-md lg:h-auto`}
     >
       <div className="flex items-center justify-between text-foreground">
-        {/* Left: Theme toggle + Logo */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            className="btn btn-ghost btn-circle text-foreground"
-          >
-            <Moon className="h-5 w-5" />
-          </button>
+        {/* Left: Logo */}
+        <div className="flex items-center">
           <Typography
             as="a"
             href="/"

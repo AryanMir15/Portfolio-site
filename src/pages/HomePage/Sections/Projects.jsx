@@ -36,7 +36,7 @@ function Projects() {
                   ease: "easeOut",
                 }}
               >
-                <Link to={`/projects/${to}`}>
+                <Link to={`/${to}`}>
                   <div className="group rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#1a1a1a] shadow-[0_8px_20px_rgba(0,0,0,0.4)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.05)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_12px_24px_rgba(255,255,255,0.08)] transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
                     {/* Content */}
                     <div className="p-6 text-left flex-grow flex flex-col justify-between">

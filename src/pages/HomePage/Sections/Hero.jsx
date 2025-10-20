@@ -99,79 +99,75 @@ const Hero = () => {
                 </p>
               </div>
 
-              {/* CTA BUTTON */}
-              <div className="mb-8">
-                {isLoggedIn ? (
-                  <div className="relative inline-flex items-center justify-center gap-4 group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-                    <Link
-                      to="/dashboard"
-                      onClick={() => handleCTAClick("go_to_dashboard")}
-                      className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30 transition-all duration-200"
-                      title="dashboard"
-                    >
-                      Go to Dashboard
-                      <svg
+              {/* CTA BUTTONS */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                {/* Contact Me Button */}
+                <div className="relative group">
+                  <a
+                    href="#contact"
+                    onClick={() => handleCTAClick("contact_me")}
+                    className="relative inline-flex items-center justify-center text-base font-medium tracking-wider rounded-xl px-6 py-3 overflow-hidden bg-black text-white active:scale-95 transition-all duration-300 shadow-[0_4px_14px_0_rgba(0,0,0,0.4)] hover:shadow-[0_6px_20px_0_rgba(0,0,0,0.4)]"
+                    title="Contact Me"
+                  >
+                    <span className="relative z-10 flex items-center">
+                      <svg 
+                        viewBox="0 0 24 24" 
+                        className="w-4 h-4 mr-2.5" 
+                        fill="currentColor"
                         aria-hidden="true"
-                        viewBox="0 0 10 10"
-                        height={10}
-                        width={10}
-                        fill="none"
-                        className="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
                       >
-                        <path
-                          d="M0 5h7"
-                          className="transition opacity-0 group-hover:opacity-100"
-                        />
-                        <path
-                          d="M1 1l4 4-4 4"
-                          className="transition group-hover:translate-x-[3px]"
-                        />
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z" />
                       </svg>
-                    </Link>
-                  </div>
-                ) : (
-                  <div className="relative inline-flex items-center justify-center gap-4 group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-                    <Link
-                      to="/register"
-                      onClick={() => handleCTAClick("start_sharing_securely")}
-                      className="group relative inline-flex items-center justify-center text-sm rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30 transition-all duration-200"
-                      title="Get Started"
+                      Contact Me
+                    </span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-pink-500/40 to-indigo-500/0 transition-all duration-700 transform -translate-x-full group-hover:translate-x-full"></span>
+                  </a>
+                </div>
+
+                {/* Learn More Button */}
+                <div className="relative group">
+                  <Link
+                    to="/learn-more"
+                    onClick={() => handleCTAClick("learn_more")}
+                    className="inline-flex items-center gap-2 px-8 py-3 text-sm rounded-xl border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition-all duration-200 font-semibold"
+                    title="Learn More"
+                  >
+                    Learn More
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 10 10"
+                      height={14}
+                      width={14}
+                      fill="none"
+                      className="stroke-current"
                     >
-                      Get Started For Free
-                      <svg
-                        aria-hidden="true"
-                        viewBox="0 0 10 10"
-                        height={10}
-                        width={10}
-                        fill="none"
-                        className="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
-                      >
-                        <path
-                          d="M0 5h7"
-                          className="transition opacity-0 group-hover:opacity-100"
-                        />
-                        <path
-                          d="M1 1l4 4-4 4"
-                          className="transition group-hover:translate-x-[3px]"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                )}
+                      <path
+                        d="M1 5h7"
+                        className="transition duration-200 group-hover:translate-x-0.5"
+                      />
+                      <path
+                        d="M5 1l4 4-4 4"
+                        className="transition duration-200"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
 
               {/* DASHBOARD IMAGE */}
               <div className="w-full max-w-[90vw] mx-auto mt-16 sm:mt-20 md:mt-24 lg:mt-28">
-                <a href="https://linknuke.whynotship.me" target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <div className="relative inline-flex items-center justify-center w-full group">
-                    <div className="hidden group-hover:block absolute inset-0 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-2xl blur-lg" />
-                    <img
-                      src="/LinkNukeHero.png"
-                      alt="LinkNuke Dashboard"
-                      className="relative w-full h-auto rounded-2xl ring-1 ring-white/10 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:shadow-gray-600/30 cursor-pointer transition-all duration-200" style={{ maxWidth: 'none' }}
-                    />
+                <a href="https://linknuke.whynotship.me" target="_blank" rel="noopener noreferrer" className="block w-full group">
+                  <div className="relative inline-flex items-center justify-center w-full">
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/30 via-pink-500/30 to-yellow-400/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-90 transition-all duration-300" />
+                    <div className="relative w-full group-hover:-translate-y-1 transition-transform duration-300">
+                      <img
+                        src="/LinkNukeHero.png"
+                        alt="LinkNuke Dashboard"
+                        className="relative w-full h-auto rounded-2xl shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.3)] group-hover:shadow-[0_20px_40px_-10px_rgba(99,102,241,0.3)]"
+                        style={{ maxWidth: 'none' }}
+                      />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -185,16 +181,16 @@ const Hero = () => {
       /* Custom cursor trail */
       .custom-cursor-trail {
         position: fixed;
-        width: 16px;
-        height: 16px;
-        background: linear-gradient(45deg, #6366f1, #ec4899);
+        width: 12.8px;  /* Reduced by 20% from 16px */
+        height: 12.8px;  /* Reduced by 20% from 16px */
+        background: linear-gradient(45deg, #ffffff, #e2e8f0);
         border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
         opacity: 0.8;
         transform: translate(-50%, -50%) scale(1);
         transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-        box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);  /* Slightly reduced shadow to match size */
         will-change: transform;
       }
       
