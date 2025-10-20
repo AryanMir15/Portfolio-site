@@ -67,7 +67,7 @@ function Footer() {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/tanzeel-mir-45615734b"
+            href="https://www.linkedin.com/in/tanzil-ur-rehman-mir-6bb494329"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 transition"

@@ -215,7 +215,7 @@ function ContactMe() {
                   <h3 className="font-medium mb-3">Connect with me</h3>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="https://github.com/tanzeelmir"
+                      href="https://github.com/AryanMir15"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0e0e0e] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700"
@@ -226,7 +226,7 @@ function ContactMe() {
                     </a>
 
                     <a
-                      href="https://linkedin.com/in/tanzeelmir"
+                      href="https://www.linkedin.com/in/tanzil-ur-rehman-mir-6bb494329"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0e0e0e] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700"
@@ -237,7 +237,7 @@ function ContactMe() {
                     </a>
 
                     <a
-                      href="https://x.com/tanzeelmir"
+                      href="https://x.com/Tanzeelmirr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0e0e0e] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700"
