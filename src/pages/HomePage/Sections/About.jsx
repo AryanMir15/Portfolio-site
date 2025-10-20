@@ -60,7 +60,7 @@ function About() {
                 Let’s connect and build something awesome together.
               </p>
               <Link
-                to="/contact-me"
+                to="/contact"
                 className="inline-block w-fit px-5 py-2 border border-black dark:border-white rounded-lg font-semibold text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
               >
                 Contact Me

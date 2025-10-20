@@ -79,7 +79,7 @@ export default function NavbarCom() {
         {/* Right side: Contact CTA + Mobile toggle */}
         {/* Right side: Contact CTA (Desktop only) */}
         <div className="hidden lg:flex items-center gap-2">
-          <Link to="/contact-me">
+          <Link to="/contact">
             <Button
               size="sm"
               className="bg-black text-white dark:bg-white dark:text-black transition-colors"
@@ -108,7 +108,7 @@ export default function NavbarCom() {
       <Collapse open={openNav}>
         <div className="mt-2 rounded-md bg-background/90 dark:bg-background/80 backdrop-blur-md shadow-md p-4">
           {navList}
-          <Link to="/contact-me">
+          <Link to="/contact">
             <Button
               fullWidth
               size="sm"

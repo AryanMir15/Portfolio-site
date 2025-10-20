@@ -103,8 +103,8 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
                 {/* Contact Me Button */}
                 <div className="relative group">
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/contact"
                     onClick={() => handleCTAClick("contact_me")}
                     className="relative inline-flex items-center justify-center text-base font-medium tracking-wider rounded-xl px-6 py-3 overflow-hidden bg-black text-white active:scale-95 transition-all duration-300 shadow-[0_4px_14px_0_rgba(0,0,0,0.4)] hover:shadow-[0_6px_20px_0_rgba(0,0,0,0.4)]"
                     title="Contact Me"
@@ -122,7 +122,7 @@ const Hero = () => {
                       Contact Me
                     </span>
                     <span className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-pink-500/40 to-indigo-500/0 transition-all duration-700 transform -translate-x-full group-hover:translate-x-full"></span>
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Learn More Button */}

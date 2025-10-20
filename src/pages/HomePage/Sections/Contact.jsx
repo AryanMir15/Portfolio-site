@@ -14,7 +14,7 @@ const Contact = () => {
         </h2>
 
         <Link
-          to="/contact-me"
+          to="/contact"
           className="inline-block px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-[1.03] hover:shadow-md"
         >
           Contact Me
