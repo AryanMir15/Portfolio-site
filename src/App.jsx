@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 import HomePage from "./HomePage";
@@ -25,29 +25,88 @@ const disableSmoothScroll = `
 // ScrollToTop component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  
+
   return null;
 };
 
 // Main App component
 function App() {
   const lenisRef = useRef();
+  const trailRef = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Cursor effect
+  useEffect(() => {
+    // Only run on client-side and for desktop
+    const isDesktopView = window.innerWidth >= 1024;
+    setIsDesktop(isDesktopView);
+
+    if (!isDesktopView) return;
+
+    const trail = document.createElement("div");
+    trail.className = "custom-cursor-trail";
+    document.body.appendChild(trail);
+    trailRef.current = trail;
+
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+
+    const updateTrail = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    const animateTrail = () => {
+      trailX += (mouseX - trailX) * 0.1;
+      trailY += (mouseY - trailY) * 0.1;
+
+      if (trail) {
+        trail.style.left = trailX + "px";
+        trail.style.top = trailY + "px";
+      }
+
+      requestAnimationFrame(animateTrail);
+    };
+
+    // Start animation
+    requestAnimationFrame(animateTrail);
+    document.addEventListener("mousemove", updateTrail);
+
+    // Handle window resize
+    const handleResize = () => {
+      const newIsDesktop = window.innerWidth >= 1024;
+      if (newIsDesktop !== isDesktop) {
+        setIsDesktop(newIsDesktop);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("mousemove", updateTrail);
+      window.removeEventListener('resize', handleResize);
+      if (trailRef.current?.parentNode) {
+        trailRef.current.parentNode.removeChild(trailRef.current);
+      }
+    };
+  }, [isDesktop]);
 
   // Initialize Lenis
   useEffect(() => {
     // Only run on client
     if (typeof window === 'undefined') return;
-    
+
     // Create style element for smooth scroll disabling
     const style = document.createElement('style');
     style.innerHTML = disableSmoothScroll;
     document.head.appendChild(style);
-    
-      // Initialize Lenis with optimized settings
+
+    // Initialize Lenis with optimized settings
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

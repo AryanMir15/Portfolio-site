@@ -7,7 +7,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative bg-gradient-to-b from-white to-gray-50 dark:from-[#0e0e0e] dark:to-[#151515] text-foreground py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden"
+      className="relative bg-[#070707] text-foreground py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <motion.h2
@@ -37,7 +37,7 @@ function Projects() {
                 }}
               >
                 <Link to={`/${to}`}>
-                  <div className="group rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#1a1a1a] shadow-[0_8px_20px_rgba(0,0,0,0.4)] dark:shadow-[0_8px_20px_rgba(255,255,255,0.05)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_12px_24px_rgba(255,255,255,0.08)] transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
+                  <div className="group rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#1a1a1a] transition-all duration-300 overflow-hidden flex flex-col justify-between h-full min-h-[450px]">
                     {/* Content */}
                     <div className="p-6 text-left flex-grow flex flex-col justify-between">
                       <div>

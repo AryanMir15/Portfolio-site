@@ -1,56 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   const isLoggedIn = typeof window !== "undefined" && localStorage.getItem("token");
-  const trailRef = useRef(null);
 
   const handleCTAClick = (action) => {
     // Track event logic here
     console.log("CTA clicked:", action);
   };
-
-  useEffect(() => {
-    // Only run on client-side and for desktop
-    if (typeof window === 'undefined' || window.innerWidth < 1024) return;
-
-    const trail = document.createElement("div");
-    trail.className = "custom-cursor-trail";
-    document.body.appendChild(trail);
-    trailRef.current = trail;
-
-    let mouseX = 0, mouseY = 0;
-    let trailX = 0, trailY = 0;
-
-    const updateTrail = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-
-    const animateTrail = () => {
-      trailX += (mouseX - trailX) * 0.1;
-      trailY += (mouseY - trailY) * 0.1;
-
-      if (trail) {
-        trail.style.left = trailX + "px";
-        trail.style.top = trailY + "px";
-      }
-
-      requestAnimationFrame(animateTrail);
-    };
-
-    // Start animation
-    requestAnimationFrame(animateTrail);
-    document.addEventListener("mousemove", updateTrail);
-
-    // Cleanup
-    return () => {
-      document.removeEventListener("mousemove", updateTrail);
-      if (trailRef.current && trailRef.current.parentNode) {
-        trailRef.current.parentNode.removeChild(trailRef.current);
-      }
-    };
-  }, []);
 
   return (
     <main className="min-h-screen bg-black">

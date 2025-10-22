@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Collapse, Button, Typography } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom"; // for full page route
+import { Link, useLocation } from "react-router-dom";
+import { scrollTo } from "../../../utils/smoothScroll";
 
 export default function NavbarCom() {
   const [openNav, setOpenNav] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,17 +35,23 @@ export default function NavbarCom() {
           className="p-1 font-normal"
         >
           {item.isHash ? (
-            <HashLink
-              smooth
-              to={item.href}
-              className="flex items-center text-foreground transition-colors hover:text-neutral-500"
+            <a
+              href={item.href}
+              className="flex items-center text-foreground transition-colors hover:text-neutral-300 dark:hover:text-neutral-400 cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                const sectionId = item.href.split('#')[1];
+                scrollTo(sectionId);
+                setOpenNav(false);
+              }}
             >
               {item.label}
-            </HashLink>
+            </a>
           ) : (
             <Link
               to={item.href}
-              className="flex items-center text-foreground transition-colors hover:text-neutral-500"
+              className="flex items-center text-foreground transition-colors hover:text-neutral-300 dark:hover:text-neutral-400"
+              onClick={() => setOpenNav(false)}
             >
               {item.label}
             </Link>
@@ -55,12 +62,13 @@ export default function NavbarCom() {
   );
 
   return (
-    <Navbar
-      className={`z-50 sticky top-0 w-full px-4 py-2 shadow-md
-      bg-background/80 dark:bg-background/30 backdrop-blur-md
-      rounded-md h-14
-      lg:top-4 lg:left-4 lg:right-4 lg:mx-auto lg:max-w-6xl lg:rounded-md lg:h-auto`}
-    >
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <Navbar
+        className={`w-full px-4 py-2 shadow-md
+        bg-background/80 dark:bg-background/30 backdrop-blur-md
+        rounded-none h-14
+        lg:mx-auto lg:max-w-6xl lg:rounded-md lg:h-auto lg:mt-4`}
+      >
       <div className="flex items-center justify-between text-foreground">
         {/* Left: Logo */}
         <div className="flex items-center">
@@ -79,13 +87,11 @@ export default function NavbarCom() {
         {/* Right side: Contact CTA + Mobile toggle */}
         {/* Right side: Contact CTA (Desktop only) */}
         <div className="hidden lg:flex items-center gap-2">
-          <Link to="/contact">
-            <Button
-              size="sm"
-              className="bg-black text-white dark:bg-white dark:text-black transition-colors"
-            >
-              <span>Contact Me</span>
-            </Button>
+          <Link 
+            to="/contact"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-xl border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition-all duration-200 font-semibold"
+          >
+            Contact Me
           </Link>
         </div>
 
@@ -112,13 +118,14 @@ export default function NavbarCom() {
             <Button
               fullWidth
               size="sm"
-              className="mt-2 bg-black text-white dark:bg-white dark:text-black transition-colors"
+              className="w-full mt-2 px-4 py-2 text-sm rounded-xl border border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white transition-all duration-200 font-semibold"
             >
               <span>Contact Me</span>
             </Button>
           </Link>
         </div>
-      </Collapse>
-    </Navbar>
+        </Collapse>
+      </Navbar>
+    </div>
   );
 }

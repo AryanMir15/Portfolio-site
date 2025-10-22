@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function About() {
   return (
     <section
-      className="py-40 px-4 sm:px-6 lg:px-8 bg-[#eeeeee] dark:bg-[#0e0e0e] text-foreground"
+      className="py-40 px-4 sm:px-6 lg:px-8 bg-black text-foreground"
       id="about"
     >
       <div className="max-w-6xl mx-auto space-y-14">
@@ -28,7 +28,7 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center text-center min-h-[500px]"
+            className="bg-[#111111] rounded-xl p-8 flex flex-col justify-center text-center min-h-[500px]"
           >
             <h2 className="text-3xl font-bold mb-4">Hi, I'm Tanzeel</h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
@@ -51,7 +51,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center min-h-[220px]"
+              className="bg-[#111111] rounded-xl p-8 flex flex-col justify-center min-h-[220px]"
             >
               <h3 className="text-2xl font-bold mb-2">
                 Got a project in mind?
@@ -73,7 +73,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-[#eeeeee] dark:bg-[#111111] rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(255,255,255,0.05)] p-8 flex flex-col justify-center"
+              className="bg-[#111111] rounded-xl p-8 flex flex-col justify-center"
             >
               <h3 className="text-2xl font-bold mb-3">Tech Stack</h3>
               <p className="text-muted-foreground text-sm mb-6">

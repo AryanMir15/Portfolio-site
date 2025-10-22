@@ -19,7 +19,7 @@ const PageLoader = () => {
   useEffect(() => {
     const handleRouteChange = () => {
       setIsRouting(true);
-      
+
       const timer = setTimeout(() => {
         setIsRouting(false);
       }, 800);
@@ -39,7 +39,7 @@ const PageLoader = () => {
         behavior: 'auto'  // Instant scroll when route changes
       });
     }
-    
+
     // Smooth scroll after content loads
     if (!isLoading && !isRouting) {
       const timer = setTimeout(() => {
@@ -48,7 +48,7 @@ const PageLoader = () => {
           behavior: 'smooth'
         });
       }, 50); // Small delay to ensure DOM is ready
-      
+
       return () => clearTimeout(timer);
     }
   }, [isLoading, isRouting, location]);
@@ -59,16 +59,16 @@ const PageLoader = () => {
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
       <div className="relative w-16 h-16">
         {/* Spinning ring - using the gradient from Hero component */}
-        <div 
+        <div
           className="absolute inset-0 rounded-full border-4 border-transparent"
           style={{
             borderImage: 'linear-gradient(to right, #6366f1, #ec4899) 1',
             animation: 'spin 1s linear infinite',
           }}
         ></div>
-        
+
         {/* Inner glow */}
-        <div 
+        <div
           className="absolute inset-0 border-4 border-transparent rounded-full"
           style={{
             borderImage: 'linear-gradient(to right, #6366f1, #ec4899) 1',
@@ -78,7 +78,7 @@ const PageLoader = () => {
           }}
         ></div>
       </div>
-      
+
       {/* Add global styles for the animation */}
       <style jsx global>{`
         @keyframes spin {
