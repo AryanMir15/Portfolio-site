@@ -10,9 +10,9 @@ const Hero = () => {
   };
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black pt-14 lg:pt-20">
       <section
-        className="relative min-h-screen w-full overflow-hidden bg-black"
+        className="relative min-h-[calc(100vh-3.5rem)] lg:min-h-[calc(100vh-5rem)] w-full overflow-hidden bg-black"
         id="home"
         aria-label="LinkNuke - Secure Self-Destructing Links Hero Section"
       >
